@@ -58,65 +58,7 @@ module Filter #(parameter WIDTH = 640, parameter HEIGHT = 480)
 	end
 	
 	
-	// Array Filler
-	logic reset;
-	assign reset = !KEY[1];
-	logic start;
-	assign start = !KEY[0];
-	logic [9:0] x_count, y_count;
-	
-	//   color           x           y
-	//reg [23:0] frame [WIDTH-1:0][HEIGHT-1:0];
-	reg [23:0] frame [100:0][100:0];
-	
-	enum {S_IDLE, S_FRONT_PORCH, S_SYNC, S_LOAD} ps, ns;
-	
-	always_comb begin
-		case(ps)
-			S_IDLE: begin
-				if(start) ns = S_FRONT_PORCH;
-				else ns = S_IDLE;
-			end			
-			S_FRONT_PORCH: begin
-				if(iVGA_VS) ns = S_FRONT_PORCH;
-				else ns = S_SYNC;
-			end
-			S_SYNC: begin
-				if (iVGA_VS) ns = S_LOAD;
-				else ns = S_SYNC;
-			end
-			S_LOAD: begin
-				if (iVGA_VS) ns = S_LOAD;
-				else ns = S_IDLE;
-			end
-		endcase
-	end
-	
-	always_ff @(posedge VGA_CLK) begin
-		if(reset)
-			ps <= S_IDLE;
-		else
-			ps <= ns;
-	
-		case(ps)
-			S_IDLE: begin
-				x_count <= '0;
-				y_count <= '0;
-			end
-		
-			S_LOAD: begin
-				// Store the pixel.
-				frame[x_count][y_count] <= {iVGA_R, iVGA_G, iVGA_B};
-				
-				// 
-				if(iVGA_HS) x_count <= x_count + 1;
-				else begin
-					x_count <= '0;
-					y_count <= y_count + 1;
-				end
-			end
-		endcase
-	end
+	s
 	
 	logic [9:0] x_count_out, y_count_out;
 	
