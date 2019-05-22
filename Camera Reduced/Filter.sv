@@ -43,66 +43,99 @@ module Filter #(parameter WIDTH = 640, parameter HEIGHT = 480)
 );
 
 	// Simple graphics hack
-	logic [27:0] delay [1:0];
-	logic [7:0] delta_R;
-	logic [7:0] delta_G;
-	logic [7:0] delta_B;
-	logic [27:0] prev_delay0;
-
+	logic [7:0] tVGA_R, tVGA_G, tVGA_B, outVGA;
+	//assign tVGA_R = SW[0] ? iVGA_R : 0;
+	//assign tVGA_G = SW[1] ? iVGA_G : 0;
+	//assign tVGA_B = SW[2] ? iVGA_B : 0;
+	assign outVGA = (iVGA_G > SW[7:0] && iVGA_R < 125 && iVGA_B < 125) ? 8'hFF : 8'h00;
+	
+	//assign {tVGA_R, tVGA_G, tVGA_B} = {outVGA, outVGA, outVGA};
+	
 	// Before and after delays.
 	always_ff @(posedge VGA_CLK) begin
-		{oVGA_R, oVGA_G, oVGA_B, oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= delay[1];
-		prev_delay0 <= delay[0];
-		delay[0] <= {iVGA_R, iVGA_G, iVGA_B, iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};
+		{oVGA_R, oVGA_G, oVGA_B, oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= 
+				{tVGA_R, tVGA_G, tVGA_B, iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};
 	end
+	
+	
+	// Array Filler
+	logic reset;
+	assign reset = !KEY[1];
+	logic start;
+	assign start = !KEY[0];
+	logic [9:0] x_count, y_count;
+	
+	//   color           x           y
+	//reg [23:0] frame [WIDTH-1:0][HEIGHT-1:0];
+	reg [23:0] frame [100:0][100:0];
+	
+	enum {S_IDLE, S_FRONT_PORCH, S_SYNC, S_LOAD} ps, ns;
 	
 	always_comb begin
-		if (delay[0][27:20] > prev_delay0[27:20])
-			delta_R = delay[0][27:20] - prev_delay0[27:20];
-		else
-			delta_R = prev_delay0[19:12] - delay[0][19:12];
-		if (delay[0][19:12] > prev_delay0[19:12])
-			delta_G = delay[0][19:12] - prev_delay0[19:12];
-		else
-			delta_G = prev_delay0[11:4] - delay[0][11:4];
-		if (delay[0][11:4] > prev_delay0[11:4])
-			delta_B = delay[0][11:4] - prev_delay0[11:4];
-		else
-			delta_B = prev_delay0[11:4] - delay[0][11:4];
+		case(ps)
+			S_IDLE: begin
+				if(start) ns = S_FRONT_PORCH;
+				else ns = S_IDLE;
+			end			
+			S_FRONT_PORCH: begin
+				if(iVGA_VS) ns = S_FRONT_PORCH;
+				else ns = S_SYNC;
+			end
+			S_SYNC: begin
+				if (iVGA_VS) ns = S_LOAD;
+				else ns = S_SYNC;
+			end
+			S_LOAD: begin
+				if (iVGA_VS) ns = S_LOAD;
+				else ns = S_IDLE;
+			end
+		endcase
 	end
 	
 	always_ff @(posedge VGA_CLK) begin
-		delay[1] <= delay[0];
-		if (SW[0]) delay[1][27:20] = delta_R;
-		if (SW[1]) delay[1][19:12] = delta_G;
-		if (SW[2]) delay[1][11:4] = delta_B;
+		if(reset)
+			ps <= S_IDLE;
+		else
+			ps <= ns;
+	
+		case(ps)
+			S_IDLE: begin
+				x_count <= '0;
+				y_count <= '0;
+			end
+		
+			S_LOAD: begin
+				// Store the pixel.
+				frame[x_count][y_count] <= {iVGA_R, iVGA_G, iVGA_B};
+				
+				// 
+				if(iVGA_HS) x_count <= x_count + 1;
+				else begin
+					x_count <= '0;
+					y_count <= y_count + 1;
+				end
+			end
+		endcase
 	end
 	
-	/*
-	// Variable length delay.  0 or more.  Inserts NUM_DELAYS registers.
-	localparam NUM_DELAYS = 100;
-	logic [27:0] delay [NUM_DELAYS:0];
-
-	assign {oVGA_R, oVGA_G, oVGA_B, oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} = delay[NUM_DELAYS];
-	assign delay[0] = {iVGA_R, iVGA_G, iVGA_B, iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};
+	logic [9:0] x_count_out, y_count_out;
 	
 	always_ff @(posedge VGA_CLK) begin
-		for (int i=NUM_DELAYS-1; i>=0; i--) begin
-			delay[i+1] <= delay[i];
+		if(!iVGA_VS) y_count_out <= 0;
+		
+		if(!iVGA_HS) begin
+			x_count_out <= '0;
+			y_count_out <= y_count_out + 1;
 		end
+		else x_count_out <= x_count_out + 1;
+		
+		if(x_count_out < 100 && y_count_out < 100)
+			{tVGA_R, tVGA_G, tVGA_B} <= frame[x_count_out][y_count_out];
+		else
+			{tVGA_R, tVGA_G, tVGA_B} <= '0;
 	end
-	*/
 	
-	/*
-	// Straight cut-through
-	assign oVGA_R = iVGA_R;
-	assign oVGA_G = iVGA_G;
-	assign oVGA_B = iVGA_B;
-	assign oVGA_HS = iVGA_HS;
-	assign oVGA_VS = iVGA_VS;
-	assign oVGA_SYNC_N = iVGA_SYNC_N;
-	assign oVGA_BLANK_N = iVGA_BLANK_N;
-	*/
+	
 	
 	assign HEX0 = '1;
 	assign HEX1 = '1;
