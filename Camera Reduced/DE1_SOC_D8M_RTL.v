@@ -269,7 +269,9 @@ Sdram_Control	   u7	(	//	HOST Side
 							.CLK         ( SDRAM_CTRL_CLK ) , 
 							//	FIFO Write Side 1
 							.WR1_DATA    ( LUT_MIPI_PIXEL_D[9:0] ),
-							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS ) ,
+							// This is the input that will stop writing to the SD CARD
+							// thus freezeing, this will need to bsync
+							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS & !SW[3] ) ,
 							
 							.WR1_ADDR    ( 0 ),
                      .WR1_MAX_ADDR( 640*480 ),

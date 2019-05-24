@@ -93,32 +93,32 @@ module Sdram_Control (
 //  PORT declarations
 //=======================================================
 //	HOST Side
-input                           RESET_N;                //System Reset
-input 							            CLK;
+input                           RESET_N;                   //System Reset
+input 							     CLK;
 //	FIFO Write Side 1
-input  [`DSIZE-1:0]           WR1_DATA;               //Data Input
-input							              WR1;					          //Write Request
-input	  [`ASIZE-1:0]			      WR1_ADDR;				        //Write Start Address
-input	  [`ASIZE-1:0]			      WR1_MAX_ADDR;			      //Write Max Address
-input	         [10:0]				  	WR1_LENGTH;     				//Write Length
-input							              WR1_LOAD;			         	//Write FIFO Clear
-input							              WR1_CLK;				        //Write FIFO Clock
-//	FIFO Write Side 2
-input  [`DSIZE-1:0]           WR2_DATA;               //Data Input
-input							              WR2;					          //Write Request
-input	  [`ASIZE-1:0]			      WR2_ADDR;				        //Write Start Address
-input	  [`ASIZE-1:0]			      WR2_MAX_ADDR;			      //Write Max Address
-input	         [10:0]				  	WR2_LENGTH;     				//Write Length
-input							              WR2_LOAD;			         	//Write FIFO Clear
-input							              WR2_CLK;				        //Write FIFO Clock
+input  [`DSIZE-1:0]             WR1_DATA;                  //Data Input
+input							        WR1;					        //Write Request
+input	  [`ASIZE-1:0]			     WR1_ADDR;				        //Write Start Address
+input	  [`ASIZE-1:0]			     WR1_MAX_ADDR;			     //Write Max Address
+input	         [10:0]			  WR1_LENGTH;     			  //Write Length
+input							        WR1_LOAD;			           //Write FIFO Clear
+input							        WR1_CLK;				        //Write FIFO Clock
+
+input  [`DSIZE-1:0]             WR2_DATA;                  //Data Input
+input							        WR2;		                 //Write Request
+input	  [`ASIZE-1:0]			     WR2_ADDR;			           //Write Start Address
+input	  [`ASIZE-1:0]			     WR2_MAX_ADDR;		        //Write Max Address
+input	         [10:0]		     WR2_LENGTH;     	        //Write Length
+input							        WR2_LOAD;			           //Write FIFO Clear
+input							        WR2_CLK;				        //Write FIFO Clock
 //	FIFO Read Side 1
-output [`DSIZE-1:0]           RD1_DATA;               //Data Output
-input							              RD1;					          //Read Request
-input	  [`ASIZE-1:0]			      RD1_ADDR;				        //Read Start Address
-input	  [`ASIZE-1:0]			      RD1_MAX_ADDR;			      //Read Max Address
-input	         [10:0]					  RD1_LENGTH;				      //Read Length
-input						              	RD1_LOAD;				        //Read FIFO Clear
-input							              RD1_CLK;				        //Read FIFO Clock
+output [`DSIZE-1:0]             RD1_DATA;                   //Data Output
+input							        RD1;					         //Read Request
+input	  [`ASIZE-1:0]			     RD1_ADDR;				         //Read Start Address
+input	  [`ASIZE-1:0]			     RD1_MAX_ADDR;			      //Read Max Address
+input	         [10:0]			  RD1_LENGTH;			         //Read Length
+input						           RD1_LOAD;				         //Read FIFO Clear
+input							        RD1_CLK;				         //Read FIFO Clock
 //	FIFO Read Side 2
 output [`DSIZE-1:0]           RD2_DATA;               //Data Output
 input							              RD2;					          //Read Request

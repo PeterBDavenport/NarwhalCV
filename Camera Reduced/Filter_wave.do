@@ -41,8 +41,9 @@ add wave -noupdate /Filter_testbench/oVGA_SYNC_N
 add wave -noupdate /Filter_testbench/oVGA_BLANK_N
 add wave -noupdate -radix unsigned /Filter_testbench/out_x
 add wave -noupdate -radix unsigned /Filter_testbench/out_y
+add wave -noupdate {/Filter_testbench/SW[3]}
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {2056312 ps} 0}
+WaveRestoreCursors {{Cursor 1} {0 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -58,4 +59,4 @@ configure wave -griddelta 4
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {2056186 ps} {2057728 ps}
+WaveRestoreZoom {0 ps} {1542 ps}
