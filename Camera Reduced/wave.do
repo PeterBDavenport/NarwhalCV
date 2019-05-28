@@ -11,14 +11,11 @@ add wave -noupdate -divider location
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y
 add wave -noupdate -divider image_memory
-add wave -noupdate -radix binary /shape_recogniser_testbench/dut/image/data
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/image/data
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/image/wraddress
 add wave -noupdate /shape_recogniser_testbench/dut/image/wren
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/image/rdaddress
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/image/q
-add wave -noupdate -divider filterd
-add wave -noupdate /shape_recogniser_testbench/dut/pixel_buffer
-add wave -noupdate /shape_recogniser_testbench/dut/pixel_darker_than_cutoff
 add wave -noupdate -divider outputs
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/oVGA_B
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/oVGA_G
@@ -28,10 +25,10 @@ add wave -noupdate /shape_recogniser_testbench/oVGA_VS
 add wave -noupdate /shape_recogniser_testbench/oVGA_SYNC_N
 add wave -noupdate /shape_recogniser_testbench/oVGA_BLANK_N
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {2987987 ps} 0} {{Cursor 2} {2874096 ps} 0} {{Cursor 3} {31934593 ps} 0}
-quietly wave cursor active 2
+WaveRestoreCursors {{Cursor 1} {767662 ps} 0}
+quietly wave cursor active 1
 configure wave -namecolwidth 150
-configure wave -valuecolwidth 87
+configure wave -valuecolwidth 65
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
 configure wave -snapdistance 10
@@ -44,4 +41,4 @@ configure wave -griddelta 50
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {2874096 ps} {2987987 ps}
+WaveRestoreZoom {0 ps} {4321088 ps}

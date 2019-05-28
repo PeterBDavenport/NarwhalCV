@@ -66,133 +66,84 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
      * identify shapes (black on white), draw bounding boxes around them, and then 
      */
     
-   reg [7:0]   inputData;
-   reg [7:0]   outputData;
-   reg [15:0]  rdaddress;
-   reg [15:0]  wraddress;
-   reg write_en;
-   image_memory image(.clock(VGA_CLK),
-                      .data(inputData),
-                      .rdaddress(rdaddress),
-                      .wraddress(wraddress),
-                      .wren(write_en),
-                      .q(outputData));
-    
-    /* Video input stream.
-     *  Here we are writing the stream of incoming pixels into the image memory.
-     *  The idea is that we save a single frame of memory, that is 640 X 480 px.
-     *  The image_memory has 2^19 = 524,288 bytes of capacity and we use 307,200
-     *  of these bytes to store our "black and white" image of the shapes that
-     *  we are trying to recognise.
-     *
-     *  Since our memory has a 8 bit word size we have 80 8-bit words per line
-     *  and 480 lines of data. This means that the pixel at location (x, y) can
-     *  be found at address = y*480*80 + x/8. This address gives a word containing
-     *  the state (true, false) of eight seperate pixels side by side.
-     *  To find the pixel itself we need to mask and shift the pixel out. The shift
-     *  amount is given as shft_amt = x%8 = x - ((x>>3)<<3).
-     */
     
     // Pixel Location Tracking.
-    logic [12:0] x_count, y_count;
+    logic [12:0] x, y;
     pixel_counter location(.clk(VGA_CLK),
                            .reset,
                            .iVGA_HS,
                            .iVGA_VS,
                            .iVGA_BLANK_N,
-                           .x_count,
-                           .y_count);
+                           .x_count(x),
+                           .y_count(y));
     
     // RGB -> Boolean Transformation via brightness cutoff.
     wire pixel_darker_than_cutoff;
     assign pixel_darker_than_cutoff = ((iVGA_R < SW[7:0]) && (iVGA_G < SW[7:0]) && (iVGA_B < SW[7:0]));
 
-   // Display Pass Through
-   always_ff @(posedge VGA_CLK) begin
-    // Show the filtered verion in the center of the screen.
-    if( (WIDTH/4 < x_count)&&(x_count < WIDTH*3/4)
-      &&(HEIGHT/4 < y_count)&&(y_count < HEIGHT*3/4)) begin
-        oVGA_R <= pixel_darker_than_cutoff ? 8'h00 : 8'hFF;
-    end else begin
-        oVGA_R <= iVGA_R;
+    // Display Pass Through - Presentation to user.
+    always_ff @(posedge VGA_CLK) begin
+        // Show the filtered verion in the center of the screen.
+        if((WIDTH/4 < x)&&(x < WIDTH*3/4)&&(HEIGHT/4 < y)&&(y < HEIGHT*3/4)) begin
+            oVGA_R <= pixel_darker_than_cutoff ? 8'h00 : 8'hFF;
+        end else begin
+            oVGA_R <= iVGA_R;
+        end
+        
+        {oVGA_G, oVGA_B} <= {iVGA_G, iVGA_B};
+        {oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= {iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};
     end
-    
-    {oVGA_G, oVGA_B} <= {iVGA_G, iVGA_B};
-    {oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= {iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};
-   end
    
-   // Boolean Value Recording.
+    /* Boolean Value Recording.
+     *  Here we are writing the stream of incoming pixels into the image memory.
+     *  The idea is that we save a single frame of memory, that is 640 X 480 px.
+     *  The image_memory has 2^19 = 524,288 bytes of capacity and we use 307,200
+     *  of these bytes to store our "black and white" image of the shapes that
+     *  we are trying to recognise.
+     */
+     
+    // RAM module for boolean image memory.
+    reg [7:0]   write_data;
+    reg [7:0]   outputData;
+    reg [15:0]  rdaddress;
+    reg [15:0]  wraddress;
+    reg write_en;
+    image_memory image(.clock(VGA_CLK),
+                       .data(write_data),
+                       .rdaddress(rdaddress),
+                       .wraddress(wraddress),
+                       .wren(write_en),
+                       .q(outputData));
 
-    /*
-    reg [7:0] load_progress;
+    /*  Since our memory has a 8 bit word size we have 80 8-bit words per line
+     *  and 480 lines of data. This means that the pixel at location (x, y) can
+     *  be found at address = y*80 + x/8. This address gives a word containing
+     *  the state (true, false) of eight seperate pixels side by side.
+     
+     *  To find the pixel itself we need to mask and shift the pixel out. The shift
+     *  amount is given as shft_amt = x%8.
+     */
+    reg [8:0] pixel_buffer;
     always_ff @(posedge VGA_CLK) begin
-        if(reset)
-            load_progress <= 0;
-        else begin
-            // For testing lets load the first 100 entries with values.
-            if(load_progress < 10) begin
-                load_progress <= load_progress + 1;
-                wraddress <= load_progress;
-                inputData <= load_progress + 7;
-                write_en <= 1;
-            end else begin
-                wraddress <= 0;
-                inputData <= 0;
-                write_en <= 0;
-            end            
+        if(reset) begin
+            pixel_buffer <= 0;
+            write_en <= 0;
         end
+        
+        // Use the write data as a buffer to accumulate a full 8 bits of
+        // data before sending it to the memory.
+        pixel_buffer = (pixel_darker_than_cutoff && iVGA_BLANK_N) | (pixel_buffer << 1);
+        
+        // Set the write address based on the coordinates.
+        wraddress <= (y*80) + (x>>3);
+        
+        // Only record once every eight horizontal pixels.
+        if(((x+1)%8) == 0 && (x > 0) && iVGA_BLANK_N) begin
+            write_en <= 1'b1;
+            write_data <= pixel_buffer[7:0];
+        end else
+            write_en <= 1'b0;
     end
-    
-    // Output from saved input stream.
-    reg [7:0] read_progress;
-    always_ff @(posedge VGA_CLK) begin
-        if(reset)
-            read_progress <= 0;
-        else begin
-            // For testing lets load the first 100 entries with values.
-            if(load_progress >= 10) begin
-                read_progress <= read_progress + 1;
-                rdaddress <= read_progress;
-            end
-        end
-    end
-    */
-    /*
-   // Simple graphics hack
-   logic bw_image;
-   logic [12:0] x, y;
-   assign bw_pixel = ((iVGA_R > SW[7:0]) && (iVGA_G > SW[7:0]) && (iVGA_B > SW[7:0]));
-   
-   // Array of black and white values
-   //                -x-         -y-
-   reg [WIDTH-1:0] bw_array [HEIGHT-1:0];
-   
-   // Find the X/Y position
-   //pixel_counter count(.clk(VGA_CLK), .reset(~KEY[2]), .iVGA_HS(iVGA_HS), .iVGA_VS(iVGA_VS), .x_count(x), .y_count(y));
-   
-   // Memory for storing the black and white image of the thing in question.
-   image_memory image(.clock(VGA_CLK),   .data(), .rdaddress(), .wraddress(), .wren(), .q());
-   //input     clock;
-   //input   [7:0]  data;
-   //input   [15:0]  rdaddress;
-   //input   [15:0]  wraddress;
-   //input     wren;
-   //output   [7:0]  q;
-   
-   always_ff @(posedge VGA_CLK) begin
-      // Normally we fill the array, print normal colors.
-      if(KEY[1]) begin
-         //bw_array[x][y] <= bw_pixel;
-         {oVGA_R, oVGA_G, oVGA_B} <= {iVGA_R, iVGA_G, iVGA_B};
-         {oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= {iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};   
-      end else begin
-         // But when SW[2] is pressed we show the contents of bw_array.
-         oVGA_R <= bw_pixel ? 8'h00 : 8'hFF;
-         {oVGA_G, oVGA_B} <= {iVGA_G, iVGA_B};
-         {oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= {iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};
-      end
-   end
-   */
    
    // Set display outputs.
    assign HEX0 = '1;
@@ -205,50 +156,20 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
 endmodule
 
 /*
-module shape_recogniser_testbench();
-    logic       VGA_CLK, clk, reset;
-    logic [7:0] iVGA_B, iVGA_G, iVGA_R;
-    logic       iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N;
-    logic [7:0] oVGA_B, oVGA_G, oVGA_R;
-    logic       oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N;
-    logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
-    logic [9:0] LEDR;
-    logic [3:0] KEY;
-    logic [8:0] SW;
-
-    assign VGA_CLK = clk;
-    
-    shape_recogniser #(.WIDTH(WIDTH), .HEIGHT(HEIGHT)) dut (.*);
-    
-    parameter PERIOD = 100;
-	initial begin
-        clk <= 0;
-		forever #(PERIOD/2) clk = ~clk;
-	end
-
-integer i;
-	initial begin
-        // Test: Simulate an incoming signal 
-    
-        {iVGA_R, iVGA_G, iVGA_B, iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N} <= '1;
-        reset <= 0; @(posedge clk);
-        reset <= 1; @(posedge clk);
-        reset <= 0; @(posedge clk);
-		for(i=0; i<100; i+=1) begin
-			 @(posedge clk);
-		end
-        $stop;
-    end
-
-endmodule
-*/
+ * ################################################################################
+ * ### shape_recogniser_testbench #################################################
+ * ################################################################################
+ *
+ * ### MODULE OVERVIEW ###
+ * This module tests the shape recogniser.
+ */
 
 `timescale 1 ps / 1 ps
 module shape_recogniser_testbench();
 	// Can reduce width and height to speed up testing
-	parameter WIDTH = 10;
-	parameter HEIGHT = 10;
-	parameter NUM_FRAMES = 2;  // We run until we've seen this many full video frames on the output.
+	parameter WIDTH = 480;
+	parameter HEIGHT = 16;
+	parameter NUM_FRAMES = 8;  // We run until we've seen this many full video frames on the output.
 
 	// Places to store the input image.  Set below.
 	logic				[7:0]		inputR	[WIDTH-1:0][HEIGHT-1:0]; 
@@ -334,7 +255,7 @@ module shape_recogniser_testbench();
 	
 	// Set up the user inputs.
 	assign KEY = '0;
-	assign SW = '0;
+	assign SW = 9'b00001111;
  
 	// Parameters to config VGA.  Adapted from VGA_Param.h
 	//	Horizontal Parameter	( Pixel )
