@@ -38,21 +38,44 @@ module Filter #(parameter WIDTH = 640, parameter HEIGHT = 480)
 	output logic		     [9:0]		LEDR,
 
 	// *** User inputs ***
-	input logic 		     [1:0]		KEY, // Key[2] reserved for reset, key[3] for auto-focus.
+	input logic 		     [3:0]		KEY, // Key[2] reserved for reset, key[3] for auto-focus.
 	input logic			     [8:0]		SW   // SW[9] reserved for auto-focus mode.
 );
 
 	// Simple graphics hack
-	logic [7:0] tVGA_R, tVGA_G, tVGA_B, outVGA, bwVGA;
-	assign tVGA_R = outVGA;
-	assign tVGA_G = outVGA;
-	assign tVGA_B = outVGA;
-	assign outVGA = (iVGA_G > SW[7:0] && iVGA_R < 125 && iVGA_B < 125) ? 8'h00 : 8'hFF ;
-
+	logic bw_image;
+	logic [12:0] x, y;
+	assign bw_pixel = ((iVGA_R > SW[7:0]) && (iVGA_G > SW[7:0]) && (iVGA_B > SW[7:0]));
+	
+	// Array of black and white values
+	//                -x-         -y-
+	reg [WIDTH-1:0] bw_array [HEIGHT-1:0];
+	
+	// Find the X/Y position
+   //pixel_counter count(.clk(VGA_CLK), .reset(~KEY[2]), .iVGA_HS(iVGA_HS), .iVGA_VS(iVGA_VS), .x_count(x), .y_count(y));
+	
+	// Memory for storing the black and white image of the thing in question.
+	image_memory image(.clock(VGA_CLK),	.data(), .rdaddress(), .wraddress(), .wren(), .q());
+	//input	  clock;
+	//input	[7:0]  data;
+	//input	[15:0]  rdaddress;
+	//input	[15:0]  wraddress;
+	//input	  wren;
+	//output	[7:0]  q;
+	
 	
 	always_ff @(posedge VGA_CLK) begin
-		{oVGA_R, oVGA_G, oVGA_B, oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= 
-		{tVGA_R, tVGA_G, tVGA_B, iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};	
+		// Normally we fill the array, print normal colors.
+		if(KEY[1]) begin
+			//bw_array[x][y] <= bw_pixel;
+			{oVGA_R, oVGA_G, oVGA_B} <= {iVGA_R, iVGA_G, iVGA_B};
+			{oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= {iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};	
+		end else begin
+			// But when SW[2] is pressed we show the contents of bw_array.
+			oVGA_R <= bw_pixel ? 8'h00 : 8'hFF;
+			{oVGA_G, oVGA_B} <= {iVGA_G, iVGA_B};
+			{oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= {iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};
+		end
 	end
 	
 	
@@ -65,6 +88,7 @@ module Filter #(parameter WIDTH = 640, parameter HEIGHT = 480)
 	assign LEDR = '0;
 
 endmodule
+
 
 
 module Filter_testbench ();
@@ -156,11 +180,8 @@ module Filter_testbench ();
 	
 	// Set up the user inputs.
 	assign KEY = '0;
-
-	initial begin
-			SW[3] <= 0; @(posedge VGA_CLK);
-			SW[3] <= 1; @(posedge VGA_CLK);
-	end
+	assign SW = '0;
+ 
 	// Parameters to config VGA.  Adapted from VGA_Param.h
 	//	Horizontal Parameter	( Pixel )
 	parameter	H_SYNC_CYC	=	96;
@@ -194,7 +215,7 @@ module Filter_testbench ();
 				H_Cont	<=	0;
 		end
 	end
-	
+
 	always_ff @(posedge VGA_CLK) begin
 		if (!reset_n) begin
 			V_Cont		<=	0;

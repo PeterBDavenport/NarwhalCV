@@ -130,8 +130,8 @@ module DE1_SOC_D8M_RTL(
 	wire		          		post_VGA_SYNC_N;
 	wire		          		post_VGA_VS;
 	
-	Filter #(.WIDTH(640), .HEIGHT(480))
-		filter (.VGA_CLK(VGA_CLK),
+	shape_recogniser #(.WIDTH(640), .HEIGHT(480))
+		filter (.VGA_CLK(VGA_CLK), .reset(~KEY[2]),
 					.iVGA_B(pre_VGA_B), .iVGA_G(pre_VGA_G), .iVGA_R(pre_VGA_R),
 					.iVGA_HS(pre_VGA_HS), .iVGA_VS(pre_VGA_VS),
 					.iVGA_SYNC_N(pre_VGA_SYNC_N), .iVGA_BLANK_N(pre_VGA_BLANK_N),
@@ -139,7 +139,7 @@ module DE1_SOC_D8M_RTL(
 					.oVGA_HS(post_VGA_HS), .oVGA_VS(post_VGA_VS),
 					.oVGA_SYNC_N(post_VGA_SYNC_N), .oVGA_BLANK_N(post_VGA_BLANK_N),
 					.HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5),
-					.LEDR(KEDR), .KEY(KEY[1:0]), .SW(SW[8:0]));
+					.LEDR(KEDR), .KEY(KEY), .SW(SW[8:0]));
 					
 	assign VGA_BLANK_N = post_VGA_BLANK_N;
 	assign VGA_B = post_VGA_B;
@@ -261,17 +261,25 @@ sdram_pll u6(
 		               .c1    ( DRAM_CLK ),       //100MHZ   -90 degree
 		               .c0    ( SDRAM_CTRL_CLK )  //100MHZ     0 degree 							
 		              
-	               );		
-						
+	               );
+
+
+//----- Logic to capture a single frame at a time.						
+wire image_capture;
+single_frame_trigger camera_trigger(.clk(CLOCK2_50),
+												.reset(!KEY[2]),
+												.trigger(!KEY[0]),
+												.VS(LUT_MIPI_PIXEL_VS),
+												.HS(LUT_MIPI_PIXEL_HS),
+												.capture(image_capture));
+
 //------SDRAM CONTROLLER --
 Sdram_Control	   u7	(	//	HOST Side						
 						   .RESET_N     ( KEY[2] ),
 							.CLK         ( SDRAM_CTRL_CLK ) , 
 							//	FIFO Write Side 1
 							.WR1_DATA    ( LUT_MIPI_PIXEL_D[9:0] ),
-							// This is the input that will stop writing to the SD CARD
-							// thus freezeing, this will need to bsync
-							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS & !SW[3] ) ,
+							.WR1         ( image_capture ) ,
 							
 							.WR1_ADDR    ( 0 ),
                      .WR1_MAX_ADDR( 640*480 ),
