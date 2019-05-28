@@ -2,35 +2,35 @@
 do shape_recogniser_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:13:58 on May 27,2019
+# Start time: 11:52:16 on May 28,2019
 # vlog -reportprogress 300 ./shape_recogniser.sv 
 # -- Compiling module shape_recogniser
 # -- Compiling module shape_recogniser_testbench
 # 
 # Top level modules:
 # 	shape_recogniser_testbench
-# End time: 22:13:58 on May 27,2019, Elapsed time: 0:00:00
+# End time: 11:52:16 on May 28,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:13:58 on May 27,2019
+# Start time: 11:52:16 on May 28,2019
 # vlog -reportprogress 300 ./pixel_counter.sv 
 # -- Compiling module pixel_counter
 # 
 # Top level modules:
 # 	pixel_counter
-# End time: 22:13:58 on May 27,2019, Elapsed time: 0:00:00
+# End time: 11:52:16 on May 28,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:13:59 on May 27,2019
+# Start time: 11:52:16 on May 28,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 22:13:59 on May 27,2019, Elapsed time: 0:00:00
+# End time: 11:52:16 on May 28,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 22:13:59 on May 27,2019
+# Start time: 11:52:16 on May 28,2019
 # Loading sv_std.std
 # Loading work.shape_recogniser_testbench
 # Loading work.shape_recogniser
@@ -42,9 +42,9 @@ do shape_recogniser_testbench.do
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftm7qae8".
+#           Attempting to use alternate WLF file "./wlft4r93zk".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftm7qae8
+#           Using alternate file: ./wlft4r93zk
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree

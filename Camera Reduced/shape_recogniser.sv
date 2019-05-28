@@ -132,7 +132,7 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
         
         // Use the write data as a buffer to accumulate a full 8 bits of
         // data before sending it to the memory.
-        pixel_buffer = (pixel_darker_than_cutoff && iVGA_BLANK_N) | (pixel_buffer << 1);
+        pixel_buffer <= (pixel_darker_than_cutoff && iVGA_BLANK_N) | (pixel_buffer << 1);
         
         // Set the write address based on the coordinates.
         wraddress <= (y*80) + (x>>3);
@@ -144,6 +144,10 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
         end else
             write_en <= 1'b0;
     end
+    
+    /* Run the algoritm on the 
+     *
+     */
    
    // Set display outputs.
    assign HEX0 = '1;
