@@ -14,7 +14,7 @@ add wave -noupdate /edge_search_testbench/dut/found
 add wave -noupdate /edge_search_testbench/dut/ps
 add wave -noupdate /edge_search_testbench/dut/direction
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {114276 ps} 0} {{Cursor 2} {79787 ps} 0}
+WaveRestoreCursors {{Cursor 1} {118644 ps} 0} {{Cursor 2} {889 ps} 0}
 quietly wave cursor active 2
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -30,4 +30,4 @@ configure wave -griddelta 50
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {128363 ps}
+WaveRestoreZoom {0 ps} {2176 ps}

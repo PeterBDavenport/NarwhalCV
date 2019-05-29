@@ -17,10 +17,8 @@ module pixel_cache (
     // or that no address is ready with ready_address = 17'b10000000000000000.
     reg  [16:0] ready_address;
     wire [16:0] requested_address;
-    wire is_ready;
     wire [7:0] px_data;
-    assign is_ready = (ready_address === requested_address);
-    assign ready = is_ready;
+    assign ready = (ready_address == requested_address);
     assign px_data = (rdata >> (x%8));
     assign pixel = px_data[0];
     assign requested_address = (y*80) + (x>>3);
@@ -83,8 +81,8 @@ module pixel_cache_testbench();
     
     integer i, j;
 	initial begin
-        reset <= 1'b1;
-        reset <= 1'b0;
+        reset <= 1'b1; @(posedge clk);
+        reset <= 1'b0; @(posedge clk);
         
         // Load the array with some values. Basically the following image
         // starting at the upper left corner of the screen array.
@@ -107,7 +105,7 @@ module pixel_cache_testbench();
         data <= 8'b01000000; wraddress <= 241; @(posedge clk);
         wren <= 0; @(posedge clk);
         
-            // Check that these values read where expected.
+            // Check that these values read where expected, nice incrementing pattern.
             for(j=0; j < 4; j++) begin
                 for(i=0; i < 16; i++) begin
 
@@ -132,6 +130,34 @@ module pixel_cache_testbench();
                     begin assert (pixel == 0 && ready) $display ("OK"); else $error("ERROR"); end
             end
         end
+
+            // Check that these values read where expected, messy pattern.
+            
+            for(i=0; i < 16; i++) begin
+                for(j=4; j > 0; j--) begin
+            
+                x <= i; y <= j; @(posedge clk);
+                while(!ready) @(posedge clk);
+                
+                if      (x == 8 && y == 0 )
+                    begin assert (pixel == 1 && ready) $display ("OK"); else $error("ERROR"); end
+                else if (x ==  1 && y == 1 )
+                    begin assert (pixel == 1 && ready) $display ("OK"); else $error("ERROR"); end
+                else if (x == 10 && y == 1 )
+                    begin assert (pixel == 1 && ready) $display ("OK"); else $error("ERROR"); end
+                else if (x ==  3 && y == 2 )
+                    begin assert (pixel == 1 && ready) $display ("OK"); else $error("ERROR"); end
+                else if (x == 12 && y == 2 )
+                    begin assert (pixel == 1 && ready) $display ("OK"); else $error("ERROR"); end
+                else if (x ==  5 && y == 3 )
+                    begin assert (pixel == 1 && ready) $display ("OK"); else $error("ERROR"); end
+                else if (x == 14 && y == 3 )
+                    begin assert (pixel == 1 && ready) $display ("OK"); else $error("ERROR"); end
+                else
+                    begin assert (pixel == 0 && ready) $display ("OK"); else $error("ERROR"); end
+            end
+        end
+
 		$stop;
 	end
     

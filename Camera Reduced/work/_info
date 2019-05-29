@@ -56,15 +56,15 @@ R12
 R13
 vedge_search
 R1
-Z14 !s110 1559146884
+Z14 !s110 1559160210
 !i10b 1
-!s100 UL6:8_7;7zVG]aHB:PU7>1
-IhN:H1Y41H<o`RW`V`699X1
+!s100 GF5jh3]OEE8FOJ9LD9FSY2
+IUc@[H]4jD[jMk`d]:52233
 R3
 Z15 !s105 edge_search_sv_unit
 S1
 R5
-Z16 w1559146875
+Z16 w1559160205
 Z17 8./edge_search.sv
 Z18 F./edge_search.sv
 L0 1
@@ -72,7 +72,7 @@ R9
 r1
 !s85 0
 31
-Z19 !s108 1559146884.000000
+Z19 !s108 1559160210.000000
 Z20 !s107 ./edge_search.sv|
 Z21 !s90 -reportprogress|300|./edge_search.sv|
 !i113 1
@@ -81,8 +81,8 @@ vedge_search_testbench
 R1
 R14
 !i10b 1
-!s100 5dg9Q?FRVePA6iU^c7G?f1
-IXJ78;T1fkOUbO^FX3<C^<2
+!s100 G3GY<c`6G9W[33_0ef5<^3
+I=FQT66l0o?MJDN_mG7e<W1
 R3
 R15
 S1
@@ -90,12 +90,35 @@ R5
 R16
 R17
 R18
-L0 137
+L0 154
 R9
 r1
 !s85 0
 31
 R19
+R20
+R21
+!i113 1
+R13
+vedge_search_with_cache_testbench
+R1
+!s110 1559155321
+!i10b 1
+!s100 Caadbi@z=:`MUo91ZlTDk2
+IfgL4Ha27>YiP2LKa8RMUe2
+R3
+R15
+S1
+R5
+w1559155258
+R17
+R18
+L0 210
+R9
+r1
+!s85 0
+31
+!s108 1559155321.000000
 R20
 R21
 !i113 1
@@ -172,7 +195,7 @@ R12
 !i113 1
 R13
 vimage_memory
-Z30 !s110 1559152652
+R14
 !i10b 1
 !s100 >FNFV83FQh1k;gAfE8bdo3
 IKzSKkoXfcDi;<2We3n7O?3
@@ -186,30 +209,30 @@ R9
 r1
 !s85 0
 31
-Z31 !s108 1559152652.000000
+R19
 !s107 ./image_memory.v|
 !s90 -reportprogress|300|./image_memory.v|
 !i113 1
 R13
 vpixel_cache
 R1
-R30
+Z30 !s110 1559157698
 !i10b 1
-!s100 KhlF[LWP[JobB35>_@Tz02
-IL>E19c4J6;_jd@W3kn;JC3
+!s100 D;zERa]lZC8WN[g;D4WT@0
+IP`_J5^jMAEAU1?EhV8B6N1
 R3
-Z32 !s105 pixel_cache_sv_unit
+Z31 !s105 pixel_cache_sv_unit
 S1
 R5
-Z33 w1559152648
-Z34 8./pixel_cache.sv
-Z35 F./pixel_cache.sv
+Z32 w1559157695
+Z33 8./pixel_cache.sv
+Z34 F./pixel_cache.sv
 L0 1
 R9
 r1
 !s85 0
 31
-R31
+Z35 !s108 1559157698.000000
 Z36 !s107 ./pixel_cache.sv|
 Z37 !s90 -reportprogress|300|./pixel_cache.sv|
 !i113 1
@@ -218,28 +241,28 @@ vpixel_cache_testbench
 R1
 R30
 !i10b 1
-!s100 JC[E=>?@Vn50K1]0E9<Yn2
-I3lja<:0hl3ASRH=jU]cJE3
+!s100 IVJKiAh^9L6o;`ASLE2m@3
+I@1dLEKJ[@@R<=[VaA:Ic43
 R3
-R32
+R31
 S1
 R5
+R32
 R33
 R34
-R35
 L0 51
 R9
 r1
 !s85 0
 31
-R31
+R35
 R36
 R37
 !i113 1
 R13
 vpixel_counter
 R1
-R14
+!s110 1559146884
 !i10b 1
 !s100 [8A[8Ea__aoNG5TaNh[4g3
 ILgb@l2I:TP9m_=`4GUF>[2
