@@ -146,7 +146,7 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
     end
     
     /* Run the algoritm on the 
-     *
+     *  
      */
    
    // Set display outputs.

@@ -1,53 +1,200 @@
 # Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
-do shape_recogniser_testbench.do
+do bounding_box_finder_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:52:16 on May 28,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
+# Start time: 16:12:22 on May 28,2019
+# vlog -reportprogress 300 ./bounding_box_finder.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module bounding_box_finder
+# -- Compiling module edge_search
+# -- Compiling module get_area
+# -- Compiling module bounding_box_finder_testbench
 # 
 # Top level modules:
-# 	shape_recogniser_testbench
-# End time: 11:52:16 on May 28,2019, Elapsed time: 0:00:00
+# 	bounding_box_finder
+# 	edge_search
+# 	get_area
+# 	bounding_box_finder_testbench
+# End time: 16:12:22 on May 28,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:52:16 on May 28,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 11:52:16 on May 28,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:52:16 on May 28,2019
+# Start time: 16:12:22 on May 28,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 11:52:16 on May 28,2019, Elapsed time: 0:00:00
+# End time: 16:12:22 on May 28,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 11:52:16 on May 28,2019
+# vsim -voptargs=""+acc"" -t 1ps -lib work bounding_box_finder_testbench -Lf altera_mf_ver 
+# Start time: 16:12:22 on May 28,2019
 # Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
+# Loading work.bounding_box_finder_testbench
+# Loading work.image_memory
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'bounding_box_finder_testbench' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /bounding_box_finder_testbench/image File: ./image_memory.v
+# Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./bounding_box_finder_testbench.do PAUSED at line 13
+do bounding_box_finder_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:18:48 on May 28,2019
+# vlog -reportprogress 300 ./bounding_box_finder.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module bounding_box_finder
+# -- Compiling module edge_search
+# -- Compiling module get_area
+# -- Compiling module bounding_box_finder_testbench
+# 
+# Top level modules:
+# 	bounding_box_finder
+# 	edge_search
+# 	get_area
+# 	bounding_box_finder_testbench
+# End time: 16:18:48 on May 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:18:48 on May 28,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 16:18:48 on May 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work bounding_box_finder_testbench -Lf altera_mf_ver 
+# Start time: 16:12:22 on May 28,2019
+# Loading sv_std.std
+# Loading work.bounding_box_finder_testbench
 # Loading work.image_memory
 # Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./bounding_box_finder.sv(101)
+#    Time: 9950 ps  Iteration: 1  Instance: /bounding_box_finder_testbench
+# Break in Module bounding_box_finder_testbench at ./bounding_box_finder.sv line 101
+add wave -position end  sim:/bounding_box_finder_testbench/clock
+add wave -position end  sim:/bounding_box_finder_testbench/data
+add wave -position end  sim:/bounding_box_finder_testbench/rdaddress
+add wave -position end  sim:/bounding_box_finder_testbench/wraddress
+add wave -position end  sim:/bounding_box_finder_testbench/wren
+add wave -position end  sim:/bounding_box_finder_testbench/q
+add wave -position end  sim:/bounding_box_finder_testbench/x
+add wave -position end  sim:/bounding_box_finder_testbench/y
+add wave -position end  sim:/bounding_box_finder_testbench/request
+add wave -position end  sim:/bounding_box_finder_testbench/clk
+add wave -position end  sim:/bounding_box_finder_testbench/reset
+add wave -position end  sim:/bounding_box_finder_testbench/pixel
+add wave -position end  sim:/bounding_box_finder_testbench/ready
+add wave -position end  sim:/bounding_box_finder_testbench/rdata
+add wave -position end  sim:/bounding_box_finder_testbench/i
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftvzjsac".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftvzjsac
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/bounding_box_finder_testbench_window.do}
+do bounding_box_finder_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:19:34 on May 28,2019
+# vlog -reportprogress 300 ./bounding_box_finder.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module bounding_box_finder
+# -- Compiling module edge_search
+# -- Compiling module get_area
+# -- Compiling module bounding_box_finder_testbench
+# 
+# Top level modules:
+# 	bounding_box_finder
+# 	edge_search
+# 	get_area
+# 	bounding_box_finder_testbench
+# End time: 16:19:34 on May 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:19:34 on May 28,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 16:19:34 on May 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:19:35 on May 28,2019, Elapsed time: 0:07:13
+# Errors: 1, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work bounding_box_finder_testbench -Lf altera_mf_ver 
+# Start time: 16:19:35 on May 28,2019
+# Loading sv_std.std
+# Loading work.bounding_box_finder_testbench
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./bounding_box_finder.sv(101)
+#    Time: 9950 ps  Iteration: 1  Instance: /bounding_box_finder_testbench
+# Break in Module bounding_box_finder_testbench at ./bounding_box_finder.sv line 101
+do bounding_box_finder_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:19:42 on May 28,2019
+# vlog -reportprogress 300 ./bounding_box_finder.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module bounding_box_finder
+# -- Compiling module edge_search
+# -- Compiling module get_area
+# -- Compiling module bounding_box_finder_testbench
+# 
+# Top level modules:
+# 	bounding_box_finder
+# 	edge_search
+# 	get_area
+# 	bounding_box_finder_testbench
+# End time: 16:19:42 on May 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:19:42 on May 28,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 16:19:42 on May 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:19:43 on May 28,2019, Elapsed time: 0:00:08
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work bounding_box_finder_testbench -Lf altera_mf_ver 
+# Start time: 16:19:43 on May 28,2019
+# Loading sv_std.std
+# Loading work.bounding_box_finder_testbench
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlft4r93zk".
+#           Attempting to use alternate WLF file "./wlfts2m900".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft4r93zk
+#           Using alternate file: ./wlfts2m900
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(353)
-#    Time: 31936650 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 353
+# ** Note: $stop    : ./bounding_box_finder.sv(101)
+#    Time: 9950 ps  Iteration: 1  Instance: /bounding_box_finder_testbench
+# Break in Module bounding_box_finder_testbench at ./bounding_box_finder.sv line 101
