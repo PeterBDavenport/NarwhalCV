@@ -16,7 +16,7 @@ module edge_search(
     output logic [9:0] x,       //location of pixel to read.
     output logic [9:0] y,       //location of pixel to read.
     output logic request,       //request a new pixel
-    input logic pixel,             // pixel (true or false), only valid when ready is asserted
+    input logic pixel,          // pixel (true or false), only valid when ready is asserted
     input logic ready           // true when pixel cache found pixel and outputs value
     );
 
@@ -34,39 +34,34 @@ module edge_search(
     //for the module and should not change
     always_comb begin
         case(search_direction)
-        2'b00 : direction = UP;
-        2'b01 : direction = DOWN;
-        2'b10 : direction = LEFT;
-        2'b11 : direction = RIGHT;
+            2'b00 : direction = UP;
+            2'b01 : direction = DOWN;
+            2'b10 : direction = LEFT;
+            2'b11 : direction = RIGHT;
         endcase
     end
 
     //drives the state machine
     always_comb begin
         case(ps)
-        IDLE:
-            begin
-                if(start)   ns = LOAD;
-                else        ns = IDLE;
-            end
-        LOAD:               ns = REQ_PIXEL;
-        REQ_PIXEL:
-            begin
-                if(ready)   ns = EVAL_PIXEL;
-                else        ns = REQ_PIXEL;
-            end
-        EVAL_PIXEL:
-            begin
-                if(pixel || outside_of_search_frame)
-                            ns = FINISHED; // pixel is 1, than found and finished or
-                                           // x,y reach end, finished and not found
-                else        ns = REQ_PIXEL;
-            end
-        FINISHED:
-            begin
-                if (start)  ns = LOAD;
-                else        ns = FINISHED;
-            end
+            IDLE: begin
+                    if(start)   ns = LOAD;
+                    else        ns = IDLE;
+                end
+            LOAD:               ns = REQ_PIXEL;
+            REQ_PIXEL: begin
+                    if(ready)   ns = EVAL_PIXEL;
+                    else        ns = REQ_PIXEL;
+                end
+            EVAL_PIXEL: begin
+                    // End if we find the pixel or run out of frame.
+                    if(pixel || outside_of_search_frame) ns = FINISHED;
+                    else        ns = REQ_PIXEL;
+                end
+            FINISHED: begin
+                    if (start)  ns = LOAD;
+                    else        ns = FINISHED;
+                end
         endcase
     end
 
@@ -96,7 +91,8 @@ module edge_search(
                     x <= x_count;
                     y <= y_count;
                 end
-                EVAL_PIXEL: begin
+                EVAL_PIXEL: begin                    
+                    // Continue the search pattern.
                     case (direction)
                         UP : // Starting in bottom left corner, scanning up then right.
                             if(y_count == search_y0) begin
@@ -128,10 +124,10 @@ module edge_search(
                     endcase
                 end
                 FINISHED: begin
-                    found_x <= x_count;
-                    found_y <= y_count;
                     done    <= 1'b1;
                     found   <= !outside_of_search_frame;
+                    found_x <= x_count;
+                    found_y <= y_count;
                 end
             endcase
         end
@@ -140,16 +136,18 @@ endmodule
 
 module edge_search_testbench();
 
+    // Connections to the searcher.
     logic [9:0] search_x0, search_y0, search_x1, search_y1;
     logic start, clk, reset;
     logic [1:0] search_direction;
     logic [9:0] found_x, found_y;
     logic done;
     logic found;
-    //connections to pixel cache
-    logic [9:0] x, y;   //location of pixel to read.
-    logic request;      //request a new pixel
-    logic pixel;         // pixel (true or false), only valid when ready is asserted
+    
+    // Connections to pixel cache.
+    logic [9:0] x, y;   // Location of pixel to read.
+    logic request;      // Request a new pixel.
+    logic pixel;        // Pixel (true or false), only valid when ready is asserted.
     logic ready;
 
     edge_search dut(.*);
