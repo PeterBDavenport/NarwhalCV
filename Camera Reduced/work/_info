@@ -8,35 +8,35 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/jbiams77/CSE371_final_project/NarwhalCV/Camera Reduced
-vbounding_box_finder
+varea_calculator
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1559085582
+Z2 !s110 1559161506
 !i10b 1
-!s100 KFZX__:PzN?V:RkZ6Qe_R1
-Ii799:]A@4M^H?JFFIIzN^3
+!s100 Cj;XXz@3De^ZAg>E>h>O?1
+Ic3:ehClBj5ieToJ5Y:1551
 Z3 VDg1SIo80bB@j0V0VzS_@n1
-Z4 !s105 bounding_box_finder_sv_unit
+Z4 !s105 area_calculator_sv_unit
 S1
 Z5 dC:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced
-Z6 w1559085525
-Z7 8./bounding_box_finder.sv
-Z8 F./bounding_box_finder.sv
-L0 32
+Z6 w1559161451
+Z7 8./area_calculator.sv
+Z8 F./area_calculator.sv
+L0 1
 Z9 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z10 !s108 1559085582.000000
-Z11 !s107 ./bounding_box_finder.sv|
-Z12 !s90 -reportprogress|300|./bounding_box_finder.sv|
+Z10 !s108 1559161506.000000
+Z11 !s107 ./area_calculator.sv|
+Z12 !s90 -reportprogress|300|./area_calculator.sv|
 !i113 1
 Z13 tCvgOpt 0
-vbounding_box_finder_testbench
+varea_calculator_testbench
 R1
 R2
 !i10b 1
-!s100 W5:OY^e<]SW^@i1E81EP]2
-IfDG;[13LHf5MTKH0HdMFJ1
+!s100 A=;1DCWjd2=G1:d1K_o2B0
+IQ]ZZ4=C9X@CcHJeVgUl7K1
 R3
 R4
 S1
@@ -44,7 +44,7 @@ R5
 R6
 R7
 R8
-L0 67
+L0 44
 R9
 r1
 !s85 0
@@ -54,35 +54,35 @@ R11
 R12
 !i113 1
 R13
-vedge_search
+vbounding_box_finder
 R1
-Z14 !s110 1559160210
+Z14 !s110 1559085582
 !i10b 1
-!s100 GF5jh3]OEE8FOJ9LD9FSY2
-IUc@[H]4jD[jMk`d]:52233
+!s100 KFZX__:PzN?V:RkZ6Qe_R1
+Ii799:]A@4M^H?JFFIIzN^3
 R3
-Z15 !s105 edge_search_sv_unit
+Z15 !s105 bounding_box_finder_sv_unit
 S1
 R5
-Z16 w1559160205
-Z17 8./edge_search.sv
-Z18 F./edge_search.sv
-L0 1
+Z16 w1559085525
+Z17 8./bounding_box_finder.sv
+Z18 F./bounding_box_finder.sv
+L0 32
 R9
 r1
 !s85 0
 31
-Z19 !s108 1559160210.000000
-Z20 !s107 ./edge_search.sv|
-Z21 !s90 -reportprogress|300|./edge_search.sv|
+Z19 !s108 1559085582.000000
+Z20 !s107 ./bounding_box_finder.sv|
+Z21 !s90 -reportprogress|300|./bounding_box_finder.sv|
 !i113 1
 R13
-vedge_search_testbench
+vbounding_box_finder_testbench
 R1
 R14
 !i10b 1
-!s100 G3GY<c`6G9W[33_0ef5<^3
-I=FQT66l0o?MJDN_mG7e<W1
+!s100 W5:OY^e<]SW^@i1E81EP]2
+IfDG;[13LHf5MTKH0HdMFJ1
 R3
 R15
 S1
@@ -90,7 +90,7 @@ R5
 R16
 R17
 R18
-L0 154
+L0 67
 R9
 r1
 !s85 0
@@ -100,67 +100,43 @@ R20
 R21
 !i113 1
 R13
-vedge_search_with_cache_testbench
+vedge_search
 R1
-!s110 1559155321
+Z22 !s110 1559160210
 !i10b 1
-!s100 Caadbi@z=:`MUo91ZlTDk2
-IfgL4Ha27>YiP2LKa8RMUe2
+!s100 GF5jh3]OEE8FOJ9LD9FSY2
+IUc@[H]4jD[jMk`d]:52233
 R3
-R15
+Z23 !s105 edge_search_sv_unit
 S1
 R5
-w1559155258
-R17
-R18
-L0 210
+Z24 w1559160205
+Z25 8./edge_search.sv
+Z26 F./edge_search.sv
+L0 1
 R9
 r1
 !s85 0
 31
-!s108 1559155321.000000
-R20
-R21
+Z27 !s108 1559160210.000000
+Z28 !s107 ./edge_search.sv|
+Z29 !s90 -reportprogress|300|./edge_search.sv|
 !i113 1
 R13
-vFilter
-R1
-Z22 !s110 1558669754
-!i10b 1
-!s100 jl?Io7VnVdTVc7M7j;QQl0
-IRV3aZCh2Ge^a^d]nO5Knf1
-R3
-Z23 !s105 Filter_sv_unit
-S1
-R0
-Z24 w1558669565
-Z25 8./Filter.sv
-Z26 F./Filter.sv
-L0 4
-R9
-r1
-!s85 0
-31
-Z27 !s108 1558669754.000000
-Z28 !s107 ./Filter.sv|
-Z29 !s90 -reportprogress|300|./Filter.sv|
-!i113 1
-R13
-n@filter
-vFilter_testbench
+vedge_search_testbench
 R1
 R22
 !i10b 1
-!s100 6V`XR2mbc1Geh1CBZ]hX<0
-IEZPDIE5E6T=1hYIMPbJRN2
+!s100 G3GY<c`6G9W[33_0ef5<^3
+I=FQT66l0o?MJDN_mG7e<W1
 R3
 R23
 S1
-R0
+R5
 R24
 R25
 R26
-L0 94
+L0 154
 R9
 r1
 !s85 0
@@ -170,32 +146,102 @@ R28
 R29
 !i113 1
 R13
+vedge_search_with_cache_testbench
+R1
+!s110 1559155321
+!i10b 1
+!s100 Caadbi@z=:`MUo91ZlTDk2
+IfgL4Ha27>YiP2LKa8RMUe2
+R3
+R23
+S1
+R5
+w1559155258
+R25
+R26
+L0 210
+R9
+r1
+!s85 0
+31
+!s108 1559155321.000000
+R28
+R29
+!i113 1
+R13
+vFilter
+R1
+Z30 !s110 1558669754
+!i10b 1
+!s100 jl?Io7VnVdTVc7M7j;QQl0
+IRV3aZCh2Ge^a^d]nO5Knf1
+R3
+Z31 !s105 Filter_sv_unit
+S1
+R0
+Z32 w1558669565
+Z33 8./Filter.sv
+Z34 F./Filter.sv
+L0 4
+R9
+r1
+!s85 0
+31
+Z35 !s108 1558669754.000000
+Z36 !s107 ./Filter.sv|
+Z37 !s90 -reportprogress|300|./Filter.sv|
+!i113 1
+R13
+n@filter
+vFilter_testbench
+R1
+R30
+!i10b 1
+!s100 6V`XR2mbc1Geh1CBZ]hX<0
+IEZPDIE5E6T=1hYIMPbJRN2
+R3
+R31
+S1
+R0
+R32
+R33
+R34
+L0 94
+R9
+r1
+!s85 0
+31
+R35
+R36
+R37
+!i113 1
+R13
 n@filter_testbench
 vget_area
 R1
-R2
+R14
 !i10b 1
 !s100 LJ<HOz<^@5l`N7RBYN4HP0
 I3]ZCKBambPYUGX?T?DEOn2
 R3
-R4
+R15
 S1
 R5
-R6
-R7
-R8
+R16
+R17
+R18
 L0 59
 R9
 r1
 !s85 0
 31
-R10
-R11
-R12
+R19
+R20
+R21
 !i113 1
 R13
 vimage_memory
-R14
+R2
 !i10b 1
 !s100 >FNFV83FQh1k;gAfE8bdo3
 IKzSKkoXfcDi;<2We3n7O?3
@@ -209,55 +255,55 @@ R9
 r1
 !s85 0
 31
-R19
+R10
 !s107 ./image_memory.v|
 !s90 -reportprogress|300|./image_memory.v|
 !i113 1
 R13
 vpixel_cache
 R1
-Z30 !s110 1559157698
+R2
 !i10b 1
-!s100 D;zERa]lZC8WN[g;D4WT@0
-IP`_J5^jMAEAU1?EhV8B6N1
+!s100 cM3QLfOJo>TF6@RS78hOb2
+I[Y48e@Wi1`V0e3T2mAK<H3
 R3
-Z31 !s105 pixel_cache_sv_unit
+Z38 !s105 pixel_cache_sv_unit
 S1
 R5
-Z32 w1559157695
-Z33 8./pixel_cache.sv
-Z34 F./pixel_cache.sv
+Z39 w1559157939
+Z40 8./pixel_cache.sv
+Z41 F./pixel_cache.sv
 L0 1
 R9
 r1
 !s85 0
 31
-Z35 !s108 1559157698.000000
-Z36 !s107 ./pixel_cache.sv|
-Z37 !s90 -reportprogress|300|./pixel_cache.sv|
+R10
+Z42 !s107 ./pixel_cache.sv|
+Z43 !s90 -reportprogress|300|./pixel_cache.sv|
 !i113 1
 R13
 vpixel_cache_testbench
 R1
-R30
+R2
 !i10b 1
-!s100 IVJKiAh^9L6o;`ASLE2m@3
-I@1dLEKJ[@@R<=[VaA:Ic43
+!s100 ]9BGTaYjNUbCkJB9m1FSY3
+IQgXfKPdZZ@oZDK`jM1AXI1
 R3
-R31
+R38
 S1
 R5
-R32
-R33
-R34
-L0 51
+R39
+R40
+R41
+L0 49
 R9
 r1
 !s85 0
 31
-R35
-R36
-R37
+R10
+R42
+R43
 !i113 1
 R13
 vpixel_counter
@@ -285,7 +331,7 @@ r1
 R13
 vram_array
 R1
-R22
+R30
 !i10b 1
 !s100 j^kAbd?B]5?hM9YdHPhWm3
 I2MDA45LeejcX>da`UaPQ^3
@@ -301,7 +347,7 @@ R9
 r1
 !s85 0
 31
-R27
+R35
 !s107 ./ram_array.sv|
 !s90 -reportprogress|300|./ram_array.sv|
 !i113 1
@@ -313,20 +359,20 @@ R1
 !s100 5;TGeD]<^=LTd_OjMFQ4^0
 IZh1?>InSzDTY>3_g`ohi63
 R3
-Z38 !s105 shape_recogniser_sv_unit
+Z44 !s105 shape_recogniser_sv_unit
 S1
 R5
-Z39 w1559084640
-Z40 8./shape_recogniser.sv
-Z41 F./shape_recogniser.sv
+Z45 w1559084640
+Z46 8./shape_recogniser.sv
+Z47 F./shape_recogniser.sv
 L0 25
 R9
 r1
 !s85 0
 31
-Z42 !s108 1559084959.000000
-Z43 !s107 ./shape_recogniser.sv|
-Z44 !s90 -reportprogress|300|./shape_recogniser.sv|
+Z48 !s108 1559084959.000000
+Z49 !s107 ./shape_recogniser.sv|
+Z50 !s90 -reportprogress|300|./shape_recogniser.sv|
 !i113 1
 R13
 vshape_recogniser_testbench
@@ -336,111 +382,111 @@ R1
 !s100 jm_aP;jezdHK:2bIA0aN40
 IX5[j_m3>]SKjzSL5`egmz0
 R3
-R38
+R44
 S1
 R5
-R39
-R40
-R41
+R45
+R46
+R47
 L0 172
 R9
 r1
 !s85 0
 31
-R42
-R43
-R44
+R48
+R49
+R50
 !i113 1
 R13
 vsingle_frame_trigger
 R1
-Z45 !s110 1559002256
+Z51 !s110 1559002256
 !i10b 1
 !s100 VLNSO:mgDD_<e>_l_DgcE1
 IRch6_M_7HXGh7SdgCl5FY0
 R3
-Z46 !s105 single_frame_trigger_sv_unit
+Z52 !s105 single_frame_trigger_sv_unit
 S1
 R5
-Z47 w1558986589
-Z48 8./single_frame_trigger.sv
-Z49 F./single_frame_trigger.sv
+Z53 w1558986589
+Z54 8./single_frame_trigger.sv
+Z55 F./single_frame_trigger.sv
 L0 21
 R9
 r1
 !s85 0
 31
-Z50 !s108 1559002256.000000
-Z51 !s107 ./single_frame_trigger.sv|
-Z52 !s90 -reportprogress|300|./single_frame_trigger.sv|
+Z56 !s108 1559002256.000000
+Z57 !s107 ./single_frame_trigger.sv|
+Z58 !s90 -reportprogress|300|./single_frame_trigger.sv|
 !i113 1
 R13
 vsingle_frame_trigger_testbench
 R1
-R45
+R51
 !i10b 1
 !s100 LZTZK<UX;?g8^[CTM?S1=1
 IE3GHDD6_XMHaPYR<Q4>ee0
 R3
-R46
+R52
 S1
 R5
-R47
-R48
-R49
+R53
+R54
+R55
 L0 81
 R9
 r1
 !s85 0
 31
-R50
-R51
-R52
+R56
+R57
+R58
 !i113 1
 R13
 vvideo_still
 R1
-R22
+R30
 !i10b 1
 !s100 ?Ne_X9az9C00TV6IbU1mF3
 I2Q;mWjh70od4Q[7KN=Sdf3
 R3
-Z53 !s105 video_still_sv_unit
+Z59 !s105 video_still_sv_unit
 S1
 R0
-Z54 w1558669659
-Z55 8./video_still.sv
-Z56 F./video_still.sv
+Z60 w1558669659
+Z61 8./video_still.sv
+Z62 F./video_still.sv
 L0 1
 R9
 r1
 !s85 0
 31
-R27
-Z57 !s107 ./video_still.sv|
-Z58 !s90 -reportprogress|300|./video_still.sv|
+R35
+Z63 !s107 ./video_still.sv|
+Z64 !s90 -reportprogress|300|./video_still.sv|
 !i113 1
 R13
 vvideo_still_testbench
 R1
-R22
+R30
 !i10b 1
 !s100 T>i`[c9a@;h4nL42Ci`942
 I6Y3M4^je5FKV`DQjE^LDa1
 R3
-R53
+R59
 S1
 R0
-R54
-R55
-R56
+R60
+R61
+R62
 L0 57
 R9
 r1
 !s85 0
 31
-R27
-R57
-R58
+R35
+R63
+R64
 !i113 1
 R13

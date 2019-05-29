@@ -13,6 +13,8 @@ ls
 # Launch_ModelSim_Peter.bat                
 # ProgramTheDE1_SoC.cdf                    
 # Shapes.pdf                               
+# area_calculator.sv                       
+# area_calculator_testbench.do             
 # bounding_box_finder.sv                   
 # bounding_box_finder_testbench.do         
 # bounding_box_finder_testbench_window.do  
@@ -93,94 +95,168 @@ ls
 # 
 # work:
 # _info  _lib.qdb  _lib1_38.qdb  _lib1_38.qpg  _lib1_38.qtl  _vmake                
-do edge_search_testbench.do
+do area_calculator_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:56:39 on May 29,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# -- Compiling module edge_search_testbench
+# Start time: 13:23:57 on May 29,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# -- Compiling module area_calculator_testbench
 # 
 # Top level modules:
-# 	edge_search_testbench
-# End time: 12:56:39 on May 29,2019, Elapsed time: 0:00:00
+# 	area_calculator_testbench
+# End time: 13:23:58 on May 29,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:56:39 on May 29,2019
+# Start time: 13:23:58 on May 29,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 12:56:39 on May 29,2019, Elapsed time: 0:00:00
+# End time: 13:23:58 on May 29,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench -Lf altera_mf_ver 
-# Start time: 12:56:39 on May 29,2019
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:23:58 on May 29,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 13:23:58 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work area_calculator_testbench -Lf altera_mf_ver 
+# Start time: 13:23:58 on May 29,2019
 # Loading sv_std.std
-# Loading work.edge_search_testbench
+# Loading work.area_calculator_testbench
+# Loading work.image_memory
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'area_calculator_testbench' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /area_calculator_testbench/image File: ./image_memory.v
+# Loading altera_mf_ver.altsyncram
+# Loading work.area_calculator
+# Loading work.pixel_cache
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./area_calculator_testbench.do PAUSED at line 14
+do area_calculator_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:24:13 on May 29,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# -- Compiling module area_calculator_testbench
+# 
+# Top level modules:
+# 	area_calculator_testbench
+# End time: 13:24:13 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:24:13 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 13:24:13 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:24:13 on May 29,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 13:24:13 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work area_calculator_testbench -Lf altera_mf_ver 
+# Start time: 13:23:58 on May 29,2019
+# Loading sv_std.std
+# Loading work.area_calculator_testbench
 # Loading work.image_memory
 # Loading altera_mf_ver.altsyncram
-# Loading work.edge_search
+# Loading work.area_calculator
+# Loading work.pixel_cache
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./area_calculator.sv(126)
+#    Time: 31050 ps  Iteration: 1  Instance: /area_calculator_testbench
+# Break in Module area_calculator_testbench at ./area_calculator.sv line 126
+add wave -position end  sim:/area_calculator_testbench/start
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftjw3dcf".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftjw3dcf
+add wave -position 0  sim:/area_calculator_testbench/clk
+add wave -position end  sim:/area_calculator_testbench/done
+add wave -position end  sim:/area_calculator_testbench/area
+add wave -position end  sim:/area_calculator_testbench/x
+add wave -position end  sim:/area_calculator_testbench/y
+add wave -position end  sim:/area_calculator_testbench/pixel
+add wave -position end  sim:/area_calculator_testbench/ready
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/area_calculator_testbench_window.do}
+do area_calculator_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:25:06 on May 29,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# -- Compiling module area_calculator_testbench
+# 
+# Top level modules:
+# 	area_calculator_testbench
+# End time: 13:25:06 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:25:06 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 13:25:06 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:25:06 on May 29,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 13:25:06 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:25:08 on May 29,2019, Elapsed time: 0:01:10
+# Errors: 1, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work area_calculator_testbench -Lf altera_mf_ver 
+# Start time: 13:25:08 on May 29,2019
+# Loading sv_std.std
+# Loading work.area_calculator_testbench
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading work.area_calculator
 # Loading work.pixel_cache
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftaken9y".
+#           Attempting to use alternate WLF file "./wlfte4yyrr".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftaken9y
+#           Using alternate file: ./wlfte4yyrr
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./edge_search.sv(243)
-#    Time: 122250 ps  Iteration: 1  Instance: /edge_search_testbench
-# Break in Module edge_search_testbench at ./edge_search.sv line 243
-do edge_search_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:03:30 on May 29,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# -- Compiling module edge_search_testbench
-# 
-# Top level modules:
-# 	edge_search_testbench
-# End time: 13:03:30 on May 29,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:03:30 on May 29,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:03:30 on May 29,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:03:32 on May 29,2019, Elapsed time: 0:06:53
-# Errors: 0, Warnings: 2
-# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench -Lf altera_mf_ver 
-# Start time: 13:03:32 on May 29,2019
-# Loading sv_std.std
-# Loading work.edge_search_testbench
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.edge_search
-# Loading work.pixel_cache
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftgvzfva".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftgvzfva
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./edge_search.sv(244)
-#    Time: 122250 ps  Iteration: 1  Instance: /edge_search_testbench
-# Break in Module edge_search_testbench at ./edge_search.sv line 244
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/wave.do}
-# End time: 13:04:41 on May 29,2019, Elapsed time: 0:01:09
+# ** Note: $stop    : ./area_calculator.sv(126)
+#    Time: 31050 ps  Iteration: 1  Instance: /area_calculator_testbench
+# Break in Module area_calculator_testbench at ./area_calculator.sv line 126
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/area_calculator_testbench_window.do}
+# End time: 13:25:53 on May 29,2019, Elapsed time: 0:00:45
 # Errors: 0, Warnings: 2
