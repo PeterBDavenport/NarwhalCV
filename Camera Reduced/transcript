@@ -1,200 +1,722 @@
 # Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
-do bounding_box_finder_testbench.do
+ls
+# DE1_SOC_D8M_RTL.qpf                      
+# DE1_SOC_D8M_RTL.qsf                      
+# DE1_SOC_D8M_RTL.qws                      
+# DE1_SOC_D8M_RTL.sdc                      
+# DE1_SOC_D8M_RTL.v                        
+# DE1_SOC_D8M_RTL.v.bak                    
+# Filter.sv                                
+# Filter.sv.bak                            
+# Filter_wave.do                           
+# Launch_ModelSim_Brandon.bat              
+# Launch_ModelSim_Peter.bat                
+# ProgramTheDE1_SoC.cdf                    
+# Shapes.pdf                               
+# bounding_box_finder.sv                   
+# bounding_box_finder_testbench.do         
+# bounding_box_finder_testbench_window.do  
+# c5_pin_model_dump.txt                    
+# edge_search.sv                           
+# edge_search_testbench.do                 
+# image_memory.qip                         
+# image_memory.v                           
+# image_memory_bb.v                        
+# input_manager.sv                         
+# pixel_counter.sv                         
+# pixel_counter.sv.bak                     
+# ram.sv                                   
+# ramArray.sv                              
+# ram_array.sv                             
+# shape_recogniser.sv                      
+# shape_recogniser.sv.bak                  
+# shape_recogniser_testbench.do            
+# shape_recogniser_testbench_window.do     
+# single_frame_trigger.sv                  
+# single_frame_trigger.sv.bak              
+# single_frame_trigger_testbench.do        
+# single_frame_trigger_window.do           
+# transcript                               
+# video_still.sv                           
+# video_still_wave.do                      
+# vish_stacktrace.vstf                     
+# vsim.wlf                                 
+# wave.do                                  
+# wlfts2m900                               
+# 
+# db:
+# 
+# greybox_tmp:
+# cbx_args.txt  greybox_tmp                                                                              
+# 
+# incremental_db:
+# README  compiled_partitions                                                                              
+# 
+# output_files:
+# DE1_SOC_D8M_RTL.asm.rpt  DE1_SOC_D8M_RTL.fit.smsg     DE1_SOC_D8M_RTL.jdi       DE1_SOC_D8M_RTL.map.summary  DE1_SOC_D8M_RTL.sof          
+# DE1_SOC_D8M_RTL.done     DE1_SOC_D8M_RTL.fit.summary  DE1_SOC_D8M_RTL.map.rpt   DE1_SOC_D8M_RTL.pin          DE1_SOC_D8M_RTL.sta.rpt      
+# DE1_SOC_D8M_RTL.fit.rpt  DE1_SOC_D8M_RTL.flow.rpt     DE1_SOC_D8M_RTL.map.smsg  DE1_SOC_D8M_RTL.sld          DE1_SOC_D8M_RTL.sta.summary  
+# 
+# V:
+# CLOCKMEM.v         VIDEO_PLL_bb.v  
+# CLOCK_DELAY.v      pll_test        
+# D8M_LUT.v          pll_test.ppf    
+# FpsMonitor.v       pll_test.qip    
+# I2C_READ_DATA.v    pll_test.v      
+# I2C_RESET_DELAY.v  pll_test_bb.v   
+# I2C_WRITE_PTR.v    pll_test_sim    
+# I2C_WRITE_WDATA.v  sdram_pll       
+# RESET_DELAY.v      sdram_pll.bsf   
+# SEG7_LUT.v         sdram_pll.ppf   
+# SEG7_LUT_8.v       sdram_pll.qip   
+# VIDEO_PLL.ppf      sdram_pll.v     
+# VIDEO_PLL.qip      sdram_pll_bb.v  
+# VIDEO_PLL.v        sdram_pll_sim   
+# 
+# VGA_Controller:
+# VGA_Controller.v  VGA_Param.h                                                                              
+# 
+# V_Auto:
+# AUTO_FOCUS_ON.v     FOCUS_ADJ.v  I2C_DELAY.v    MODIFY_SYNC.v  VCM_I2C.v        
+# AUTO_SYNC_MODIFY.v  F_VCM.v      LCD_COUNTER.v  VCM_CTRL_P.v                    
+# 
+# V_D8M:
+# Line_Buffer_J.v              MIPI_BRIDGE_CONFIG.v  ON_CHIP_FRAM.v      RAW2RGB_J.v    VGA_RD_COUNTER.v  int_line.v     
+# MIPI_BRIDGE_CAMERA_Config.v  MIPI_CAMERA_CONFIG.v  RAM_READ_COUNTER.v  RAW_RGB_BIN.v  int_line.qip      int_line_bb.v  
+# 
+# V_Sdram_Control:
+# Sdram_Control.v      Sdram_Params.h     Sdram_RD_FIFO.v     Sdram_WR_FIFO.qip  Sdram_WR_FIFO_bb.v  control_interface.v  
+# Sdram_Control.v.bak  Sdram_RD_FIFO.qip  Sdram_RD_FIFO_bb.v  Sdram_WR_FIFO.v    command.v           sdr_data_path.v      
+# 
+# work:
+# _info  _lib.qdb  _lib1_23.qdb  _lib1_23.qpg  _lib1_23.qtl  _vmake                
+do edge_search_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:12:22 on May 28,2019
-# vlog -reportprogress 300 ./bounding_box_finder.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module bounding_box_finder
-# -- Compiling module edge_search
-# -- Compiling module get_area
-# -- Compiling module bounding_box_finder_testbench
-# 
-# Top level modules:
-# 	bounding_box_finder
-# 	edge_search
-# 	get_area
-# 	bounding_box_finder_testbench
-# End time: 16:12:22 on May 28,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:12:22 on May 28,2019
+# Start time: 08:01:34 on May 29,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 16:12:22 on May 28,2019, Elapsed time: 0:00:00
+# End time: 08:01:34 on May 29,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work bounding_box_finder_testbench -Lf altera_mf_ver 
-# Start time: 16:12:22 on May 28,2019
-# Loading sv_std.std
-# Loading work.bounding_box_finder_testbench
-# Loading work.image_memory
-# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'bounding_box_finder_testbench' does not have a timeunit/timeprecision specification in effect, but other modules do.
-#    Time: 0 ps  Iteration: 0  Instance: /bounding_box_finder_testbench/image File: ./image_memory.v
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./bounding_box_finder_testbench.do PAUSED at line 13
-do bounding_box_finder_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:18:48 on May 28,2019
-# vlog -reportprogress 300 ./bounding_box_finder.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module bounding_box_finder
+# Start time: 08:01:34 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 08:01:34 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:01:34 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
 # -- Compiling module edge_search
-# -- Compiling module get_area
-# -- Compiling module bounding_box_finder_testbench
+# -- Compiling module edge_search_testbench
 # 
 # Top level modules:
-# 	bounding_box_finder
-# 	edge_search
-# 	get_area
-# 	bounding_box_finder_testbench
-# End time: 16:18:48 on May 28,2019, Elapsed time: 0:00:00
+# 	edge_search_testbench
+# End time: 08:01:34 on May 29,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:18:48 on May 28,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 16:18:48 on May 28,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work bounding_box_finder_testbench -Lf altera_mf_ver 
-# Start time: 16:12:22 on May 28,2019
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 08:01:34 on May 29,2019
 # Loading sv_std.std
-# Loading work.bounding_box_finder_testbench
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.edge_search_testbench
+# Loading work.edge_search
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./bounding_box_finder.sv(101)
-#    Time: 9950 ps  Iteration: 1  Instance: /bounding_box_finder_testbench
-# Break in Module bounding_box_finder_testbench at ./bounding_box_finder.sv line 101
-add wave -position end  sim:/bounding_box_finder_testbench/clock
-add wave -position end  sim:/bounding_box_finder_testbench/data
-add wave -position end  sim:/bounding_box_finder_testbench/rdaddress
-add wave -position end  sim:/bounding_box_finder_testbench/wraddress
-add wave -position end  sim:/bounding_box_finder_testbench/wren
-add wave -position end  sim:/bounding_box_finder_testbench/q
-add wave -position end  sim:/bounding_box_finder_testbench/x
-add wave -position end  sim:/bounding_box_finder_testbench/y
-add wave -position end  sim:/bounding_box_finder_testbench/request
-add wave -position end  sim:/bounding_box_finder_testbench/clk
-add wave -position end  sim:/bounding_box_finder_testbench/reset
-add wave -position end  sim:/bounding_box_finder_testbench/pixel
-add wave -position end  sim:/bounding_box_finder_testbench/ready
-add wave -position end  sim:/bounding_box_finder_testbench/rdata
-add wave -position end  sim:/bounding_box_finder_testbench/i
+# ** Note: $stop    : ./edge_search.sv(154)
+#    Time: 122930950 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 154
+add wave -position end  sim:/edge_search_testbench/search_x0
+add wave -position end  sim:/edge_search_testbench/search_y0
+add wave -position end  sim:/edge_search_testbench/search_x1
+add wave -position end  sim:/edge_search_testbench/search_y1
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftvzjsac".
+#           Attempting to use alternate WLF file "./wlftcmtir5".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftvzjsac
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/bounding_box_finder_testbench_window.do}
-do bounding_box_finder_testbench.do
+#           Using alternate file: ./wlftcmtir5
+add wave -position end  sim:/edge_search_testbench/start
+add wave -position end  sim:/edge_search_testbench/clk
+add wave -position end  sim:/edge_search_testbench/reset
+add wave -position end  sim:/edge_search_testbench/search_direction
+add wave -position end  sim:/edge_search_testbench/found_x
+add wave -position end  sim:/edge_search_testbench/found_y
+add wave -position end  sim:/edge_search_testbench/done
+add wave -position end  sim:/edge_search_testbench/found
+add wave -position end  sim:/edge_search_testbench/request
+add wave -position end  sim:/edge_search_testbench/pixel
+add wave -position end  sim:/edge_search_testbench/ready
+add wave -position end  sim:/edge_search_testbench/i
+add wave -position end  sim:/edge_search_testbench/j
+add wave -position 19  sim:/edge_search_testbench/x
+add wave -position 20  sim:/edge_search_testbench/y
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/edge_search_testbench_window.do}
+do edge_search_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:19:34 on May 28,2019
-# vlog -reportprogress 300 ./bounding_box_finder.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module bounding_box_finder
-# -- Compiling module edge_search
-# -- Compiling module get_area
-# -- Compiling module bounding_box_finder_testbench
-# 
-# Top level modules:
-# 	bounding_box_finder
-# 	edge_search
-# 	get_area
-# 	bounding_box_finder_testbench
-# End time: 16:19:34 on May 28,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:19:34 on May 28,2019
+# Start time: 08:03:35 on May 29,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 16:19:34 on May 28,2019, Elapsed time: 0:00:00
+# End time: 08:03:35 on May 29,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 16:19:35 on May 28,2019, Elapsed time: 0:07:13
-# Errors: 1, Warnings: 2
-# vsim -voptargs=""+acc"" -t 1ps -lib work bounding_box_finder_testbench -Lf altera_mf_ver 
-# Start time: 16:19:35 on May 28,2019
-# Loading sv_std.std
-# Loading work.bounding_box_finder_testbench
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./bounding_box_finder.sv(101)
-#    Time: 9950 ps  Iteration: 1  Instance: /bounding_box_finder_testbench
-# Break in Module bounding_box_finder_testbench at ./bounding_box_finder.sv line 101
-do bounding_box_finder_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:19:42 on May 28,2019
-# vlog -reportprogress 300 ./bounding_box_finder.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module bounding_box_finder
+# Start time: 08:03:35 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 08:03:35 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:03:35 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
 # -- Compiling module edge_search
-# -- Compiling module get_area
-# -- Compiling module bounding_box_finder_testbench
+# -- Compiling module edge_search_testbench
 # 
 # Top level modules:
-# 	bounding_box_finder
-# 	edge_search
-# 	get_area
-# 	bounding_box_finder_testbench
-# End time: 16:19:42 on May 28,2019, Elapsed time: 0:00:00
+# 	edge_search_testbench
+# End time: 08:03:35 on May 29,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:19:42 on May 28,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 16:19:42 on May 28,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 16:19:43 on May 28,2019, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work bounding_box_finder_testbench -Lf altera_mf_ver 
-# Start time: 16:19:43 on May 28,2019
+# End time: 08:03:38 on May 29,2019, Elapsed time: 0:02:04
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 08:03:38 on May 29,2019
 # Loading sv_std.std
-# Loading work.bounding_box_finder_testbench
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.edge_search_testbench
+# Loading work.edge_search
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlfts2m900".
+#           Attempting to use alternate WLF file "./wlftxy95i6".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfts2m900
+#           Using alternate file: ./wlftxy95i6
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./bounding_box_finder.sv(101)
-#    Time: 9950 ps  Iteration: 1  Instance: /bounding_box_finder_testbench
-# Break in Module bounding_box_finder_testbench at ./bounding_box_finder.sv line 101
+# ** Note: $stop    : ./edge_search.sv(154)
+#    Time: 122930950 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 154
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/edge_search_testbench_window.do}
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:08:30 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 08:08:30 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:08:30 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 08:08:30 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:08:30 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 08:08:30 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 08:08:37 on May 29,2019, Elapsed time: 0:04:59
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 08:08:37 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftsbctxz".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftsbctxz
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./edge_search.sv(152)
+#    Time: 40450 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 152
+add wave -position end  sim:/edge_search_testbench/dut/ps
+add wave -position end  sim:/edge_search_testbench/dut/ns
+add wave -position end  sim:/edge_search_testbench/dut/x_count
+add wave -position end  sim:/edge_search_testbench/dut/y_count
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/edge_search_testbench_window.do}
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:20:40 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 08:20:40 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:20:40 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 08:20:40 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:20:40 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 08:20:40 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 08:20:42 on May 29,2019, Elapsed time: 0:12:05
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 08:20:42 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftfgqnxb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfgqnxb
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./edge_search.sv(157)
+#    Time: 40450 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 157
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:44:39 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 08:44:39 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:44:39 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 08:44:39 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:44:39 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# ** Error: (vlog-13069) ./edge_search.sv(172): near "else": syntax error, unexpected else.
+# End time: 08:44:39 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./edge_search_testbench.do line 9
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./edge_search.sv""
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:45:34 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 08:45:34 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:45:34 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 08:45:34 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:45:34 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 08:45:34 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 08:45:38 on May 29,2019, Elapsed time: 0:24:56
+# Errors: 4, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 08:45:38 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlft5q6qgj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft5q6qgj
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:47:05 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 08:47:05 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:47:05 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 08:47:06 on May 29,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:47:06 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 08:47:06 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 08:47:07 on May 29,2019, Elapsed time: 0:01:29
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 08:47:07 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlfti9xfv1".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfti9xfv1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./edge_search.sv(194)
+#    Time: 243150 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 194
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:54:31 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 08:54:32 on May 29,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:54:32 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 08:54:32 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:54:32 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 08:54:32 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 08:54:38 on May 29,2019, Elapsed time: 0:07:31
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 08:54:38 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlft75ah7n".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft75ah7n
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./edge_search.sv(193)
+#    Time: 243150 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 193
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:59:42 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 08:59:42 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:59:42 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 08:59:42 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:59:42 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 08:59:42 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 08:59:47 on May 29,2019, Elapsed time: 0:05:09
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 08:59:47 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftzcvw6z".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftzcvw6z
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./edge_search.sv(190)
+#    Time: 243150 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 190
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:01:33 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 09:01:33 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:01:33 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 09:01:33 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:01:34 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 09:01:34 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 09:01:35 on May 29,2019, Elapsed time: 0:01:48
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 09:01:35 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlft7k36tj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft7k36tj
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./edge_search.sv(190)
+#    Time: 243150 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 190
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:04:02 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 09:04:02 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:04:02 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 09:04:02 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:04:02 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 09:04:02 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 09:04:06 on May 29,2019, Elapsed time: 0:02:31
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 09:04:06 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftr69rns".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftr69rns
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./edge_search.sv(194)
+#    Time: 243150 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 194
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:08:54 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 09:08:54 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:08:54 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 09:08:54 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:08:54 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 09:08:54 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 09:08:57 on May 29,2019, Elapsed time: 0:04:51
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 09:08:57 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftxhbwz4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxhbwz4
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./edge_search.sv(208)
+#    Time: 243150 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 208
+do edge_search_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:09:37 on May 29,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 09:09:37 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:09:37 on May 29,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 09:09:38 on May 29,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:09:38 on May 29,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# -- Compiling module edge_search_testbench
+# 
+# Top level modules:
+# 	edge_search_testbench
+# End time: 09:09:38 on May 29,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 09:09:39 on May 29,2019, Elapsed time: 0:00:42
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work edge_search_testbench 
+# Start time: 09:09:39 on May 29,2019
+# Loading sv_std.std
+# Loading work.edge_search_testbench
+# Loading work.edge_search
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlft4056sk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4056sk
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./edge_search.sv(208)
+#    Time: 293550 ps  Iteration: 1  Instance: /edge_search_testbench
+# Break in Module edge_search_testbench at ./edge_search.sv line 208

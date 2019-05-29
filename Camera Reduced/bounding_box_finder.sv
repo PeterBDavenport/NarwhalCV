@@ -3,7 +3,7 @@ module pixel_cache (input logic [9:0] x, y,
                     output logic pixel, ready,
                     output logic [15:0] rdaddress,
                     input logic  [7:0]  rdata);
-    
+
     wire [15:0] read_address;
     wire [7:0] bit_mask;
     assign bit_mask = 8'b10000000 >> (x%8);    
