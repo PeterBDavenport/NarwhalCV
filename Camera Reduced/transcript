@@ -1,262 +1,1458 @@
 # Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
-ls
-# DE1_SOC_D8M_RTL.qpf                      
-# DE1_SOC_D8M_RTL.qsf                      
-# DE1_SOC_D8M_RTL.qws                      
-# DE1_SOC_D8M_RTL.sdc                      
-# DE1_SOC_D8M_RTL.v                        
-# DE1_SOC_D8M_RTL.v.bak                    
-# Filter.sv                                
-# Filter.sv.bak                            
-# Filter_wave.do                           
-# Launch_ModelSim_Brandon.bat              
-# Launch_ModelSim_Peter.bat                
-# ProgramTheDE1_SoC.cdf                    
-# Shapes.pdf                               
-# area_calculator.sv                       
-# area_calculator_testbench.do             
-# bounding_box_finder.sv                   
-# bounding_box_finder_testbench.do         
-# bounding_box_finder_testbench_window.do  
-# c5_pin_model_dump.txt                    
-# edge_search.sv                           
-# edge_search_testbench.do                 
-# edge_search_testbench_window.do          
-# image_memory.qip                         
-# image_memory.v                           
-# image_memory_bb.v                        
-# input_manager.sv                         
-# pixel_cache.sv                           
-# pixel_cache_testbench.do                 
-# pixel_cache_testbench_window.do          
-# pixel_counter.sv                         
-# pixel_counter.sv.bak                     
-# ram.sv                                   
-# ramArray.sv                              
-# ram_array.sv                             
-# shape_recogniser.sv                      
-# shape_recogniser.sv.bak                  
-# shape_recogniser_testbench.do            
-# shape_recogniser_testbench_window.do     
-# single_frame_trigger.sv                  
-# single_frame_trigger.sv.bak              
-# single_frame_trigger_testbench.do        
-# single_frame_trigger_window.do           
-# transcript                               
-# video_still.sv                           
-# video_still_wave.do                      
-# vish_stacktrace.vstf                     
-# vsim.wlf                                 
-# wave.do                                  
-# 
-# db:
-# 
-# greybox_tmp:
-# cbx_args.txt  greybox_tmp                                                                              
-# 
-# incremental_db:
-# README  compiled_partitions                                                                              
-# 
-# output_files:
-# DE1_SOC_D8M_RTL.asm.rpt  DE1_SOC_D8M_RTL.fit.smsg     DE1_SOC_D8M_RTL.jdi       DE1_SOC_D8M_RTL.map.summary  DE1_SOC_D8M_RTL.sof          
-# DE1_SOC_D8M_RTL.done     DE1_SOC_D8M_RTL.fit.summary  DE1_SOC_D8M_RTL.map.rpt   DE1_SOC_D8M_RTL.pin          DE1_SOC_D8M_RTL.sta.rpt      
-# DE1_SOC_D8M_RTL.fit.rpt  DE1_SOC_D8M_RTL.flow.rpt     DE1_SOC_D8M_RTL.map.smsg  DE1_SOC_D8M_RTL.sld          DE1_SOC_D8M_RTL.sta.summary  
-# 
-# V:
-# CLOCKMEM.v         VIDEO_PLL_bb.v  
-# CLOCK_DELAY.v      pll_test        
-# D8M_LUT.v          pll_test.ppf    
-# FpsMonitor.v       pll_test.qip    
-# I2C_READ_DATA.v    pll_test.v      
-# I2C_RESET_DELAY.v  pll_test_bb.v   
-# I2C_WRITE_PTR.v    pll_test_sim    
-# I2C_WRITE_WDATA.v  sdram_pll       
-# RESET_DELAY.v      sdram_pll.bsf   
-# SEG7_LUT.v         sdram_pll.ppf   
-# SEG7_LUT_8.v       sdram_pll.qip   
-# VIDEO_PLL.ppf      sdram_pll.v     
-# VIDEO_PLL.qip      sdram_pll_bb.v  
-# VIDEO_PLL.v        sdram_pll_sim   
-# 
-# VGA_Controller:
-# VGA_Controller.v  VGA_Param.h                                                                              
-# 
-# V_Auto:
-# AUTO_FOCUS_ON.v     FOCUS_ADJ.v  I2C_DELAY.v    MODIFY_SYNC.v  VCM_I2C.v        
-# AUTO_SYNC_MODIFY.v  F_VCM.v      LCD_COUNTER.v  VCM_CTRL_P.v                    
-# 
-# V_D8M:
-# Line_Buffer_J.v              MIPI_BRIDGE_CONFIG.v  ON_CHIP_FRAM.v      RAW2RGB_J.v    VGA_RD_COUNTER.v  int_line.v     
-# MIPI_BRIDGE_CAMERA_Config.v  MIPI_CAMERA_CONFIG.v  RAM_READ_COUNTER.v  RAW_RGB_BIN.v  int_line.qip      int_line_bb.v  
-# 
-# V_Sdram_Control:
-# Sdram_Control.v      Sdram_Params.h     Sdram_RD_FIFO.v     Sdram_WR_FIFO.qip  Sdram_WR_FIFO_bb.v  control_interface.v  
-# Sdram_Control.v.bak  Sdram_RD_FIFO.qip  Sdram_RD_FIFO_bb.v  Sdram_WR_FIFO.v    command.v           sdr_data_path.v      
-# 
-# work:
-# _info  _lib.qdb  _lib1_38.qdb  _lib1_38.qpg  _lib1_38.qtl  _vmake                
-do area_calculator_testbench.do
+do shape_recogniser_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:57 on May 29,2019
-# vlog -reportprogress 300 ./area_calculator.sv 
-# -- Compiling module area_calculator
-# -- Compiling module area_calculator_testbench
+# Start time: 16:08:16 on May 30,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
 # 
 # Top level modules:
-# 	area_calculator_testbench
-# End time: 13:23:58 on May 29,2019, Elapsed time: 0:00:01
+# 	shape_recogniser_testbench
+# End time: 16:08:17 on May 30,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:58 on May 29,2019
+# Start time: 16:08:17 on May 30,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 16:08:17 on May 30,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:08:17 on May 30,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 13:23:58 on May 29,2019, Elapsed time: 0:00:00
+# End time: 16:08:17 on May 30,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:58 on May 29,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:23:58 on May 29,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work area_calculator_testbench -Lf altera_mf_ver 
-# Start time: 13:23:58 on May 29,2019
+# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
+# Start time: 16:08:17 on May 30,2019
 # Loading sv_std.std
-# Loading work.area_calculator_testbench
-# Loading work.image_memory
-# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'area_calculator_testbench' does not have a timeunit/timeprecision specification in effect, but other modules do.
-#    Time: 0 ps  Iteration: 0  Instance: /area_calculator_testbench/image File: ./image_memory.v
-# Loading altera_mf_ver.altsyncram
-# Loading work.area_calculator
-# Loading work.pixel_cache
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./area_calculator_testbench.do PAUSED at line 14
-do area_calculator_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:24:13 on May 29,2019
-# vlog -reportprogress 300 ./area_calculator.sv 
-# -- Compiling module area_calculator
-# -- Compiling module area_calculator_testbench
-# 
-# Top level modules:
-# 	area_calculator_testbench
-# End time: 13:24:13 on May 29,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:24:13 on May 29,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:24:13 on May 29,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:24:13 on May 29,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:24:13 on May 29,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work area_calculator_testbench -Lf altera_mf_ver 
-# Start time: 13:23:58 on May 29,2019
-# Loading sv_std.std
-# Loading work.area_calculator_testbench
+# Loading work.shape_recogniser_testbench
+# Loading work.shape_recogniser
+# Loading work.pixel_counter
 # Loading work.image_memory
 # Loading altera_mf_ver.altsyncram
-# Loading work.area_calculator
-# Loading work.pixel_cache
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./area_calculator.sv(126)
-#    Time: 31050 ps  Iteration: 1  Instance: /area_calculator_testbench
-# Break in Module area_calculator_testbench at ./area_calculator.sv line 126
-add wave -position end  sim:/area_calculator_testbench/start
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftjw3dcf".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjw3dcf
-add wave -position 0  sim:/area_calculator_testbench/clk
-add wave -position end  sim:/area_calculator_testbench/done
-add wave -position end  sim:/area_calculator_testbench/area
-add wave -position end  sim:/area_calculator_testbench/x
-add wave -position end  sim:/area_calculator_testbench/y
-add wave -position end  sim:/area_calculator_testbench/pixel
-add wave -position end  sim:/area_calculator_testbench/ready
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/area_calculator_testbench_window.do}
-do area_calculator_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:25:06 on May 29,2019
-# vlog -reportprogress 300 ./area_calculator.sv 
-# -- Compiling module area_calculator
-# -- Compiling module area_calculator_testbench
-# 
-# Top level modules:
-# 	area_calculator_testbench
-# End time: 13:25:06 on May 29,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:25:06 on May 29,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:25:06 on May 29,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:25:06 on May 29,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:25:06 on May 29,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:25:08 on May 29,2019, Elapsed time: 0:01:10
-# Errors: 1, Warnings: 2
-# vsim -voptargs=""+acc"" -t 1ps -lib work area_calculator_testbench -Lf altera_mf_ver 
-# Start time: 13:25:08 on May 29,2019
-# Loading sv_std.std
-# Loading work.area_calculator_testbench
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.area_calculator
-# Loading work.pixel_cache
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlfte4yyrr".
+#           Attempting to use alternate WLF file "./wlft0sitvj".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfte4yyrr
+#           Using alternate file: ./wlft0sitvj
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./area_calculator.sv(126)
-#    Time: 31050 ps  Iteration: 1  Instance: /area_calculator_testbench
-# Break in Module area_calculator_testbench at ./area_calculator.sv line 126
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/area_calculator_testbench_window.do}
-# End time: 13:25:53 on May 29,2019, Elapsed time: 0:00:45
+# ** Note: $stop    : ./shape_recogniser.sv(373)
+#    Time: 7501450 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 373
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:10:33 on May 30,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
+# 
+# Top level modules:
+# 	shape_recogniser_testbench
+# End time: 16:10:33 on May 30,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:10:33 on May 30,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 16:10:33 on May 30,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:10:33 on May 30,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 16:10:33 on May 30,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:10:34 on May 30,2019, Elapsed time: 0:02:17
 # Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
+# Start time: 16:10:34 on May 30,2019
+# Loading sv_std.std
+# Loading work.shape_recogniser_testbench
+# Loading work.shape_recogniser
+# Loading work.pixel_counter
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftttnnhk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftttnnhk
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./shape_recogniser.sv(373)
+#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 373
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:22:29 on May 30,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# ** Error: (vlog-13069) ./shape_recogniser.sv(86): near "assign": syntax error, unexpected assign, expecting ';' or ','.
+# -- Compiling module shape_recogniser_testbench
+# End time: 16:22:29 on May 30,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./shape_recogniser_testbench.do line 7
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./shape_recogniser.sv""
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:22:56 on May 30,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
+# 
+# Top level modules:
+# 	shape_recogniser_testbench
+# End time: 16:22:56 on May 30,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:22:56 on May 30,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 16:22:56 on May 30,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:22:56 on May 30,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 16:22:56 on May 30,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:22:57 on May 30,2019, Elapsed time: 0:12:23
+# Errors: 4, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
+# Start time: 16:22:57 on May 30,2019
+# Loading sv_std.std
+# Loading work.shape_recogniser_testbench
+# Loading work.shape_recogniser
+# Loading work.pixel_counter
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftq1wbmj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftq1wbmj
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Error: Assertion error.
+#    Time: 1875250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1875350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1875450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1875550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1875650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1875750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1875850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1875950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1876950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1877950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1878950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1879950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1880950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1881950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1882950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1883950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1884950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1885950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1886950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1887950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1888950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1889950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1890950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1891050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 1901550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3248950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3249950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3250950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3251950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3252950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3253950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3254950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3255950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3256950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3257950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3258950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3259950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3260950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3261950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3262950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3263050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3263150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3263250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3263350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3263450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3263550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3263650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3263750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3263850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 3274350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5808850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5808950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5809950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5810950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5811950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5812950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5813950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5814950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5815950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5816950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5817950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5818950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5819950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5820950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5821950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5822950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5823950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5824050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5824150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5824250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5824350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5824450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5824550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5824650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 5835150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7181650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7181750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7181850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7181950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7182950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7183950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7184950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7185950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7186950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7187950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7188950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7189950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7190950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7191950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7192950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7193950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7194950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7195950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196550 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196650 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196750 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196850 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7196950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7197050 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7197150 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7197250 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7197350 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7197450 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Error: Assertion error.
+#    Time: 7207950 ps  Scope: shape_recogniser_testbench File: ./shape_recogniser.sv Line: 355
+# ** Note: $stop    : ./shape_recogniser.sv(383)
+#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 383
+# End time: 16:23:18 on May 30,2019, Elapsed time: 0:00:21
+# Errors: 640, Warnings: 2

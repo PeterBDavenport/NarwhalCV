@@ -27,8 +27,11 @@ add wave -noupdate /shape_recogniser_testbench/oVGA_HS
 add wave -noupdate /shape_recogniser_testbench/oVGA_VS
 add wave -noupdate /shape_recogniser_testbench/oVGA_SYNC_N
 add wave -noupdate /shape_recogniser_testbench/oVGA_BLANK_N
+add wave -noupdate -divider User
+add wave -noupdate {/shape_recogniser_testbench/KEY[0]}
+add wave -noupdate {/shape_recogniser_testbench/KEY[2]}
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {2987987 ps} 0} {{Cursor 2} {2874096 ps} 0} {{Cursor 3} {31934593 ps} 0}
+WaveRestoreCursors {{Cursor 1} {7421239 ps} 0} {{Cursor 2} {2944397 ps} 0} {{Cursor 3} {31934593 ps} 0}
 quietly wave cursor active 2
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 87
@@ -44,4 +47,4 @@ configure wave -griddelta 50
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {2874096 ps} {2987987 ps}
+WaveRestoreZoom {0 ps} {15753216 ps}

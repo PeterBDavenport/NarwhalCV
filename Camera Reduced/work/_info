@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/jbiams77/CSE371_final_project/NarwhalCV/Camera Reduced
 varea_calculator
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1559161506
+Z2 !s110 1559252105
 !i10b 1
 !s100 Cj;XXz@3De^ZAg>E>h>O?1
 Ic3:ehClBj5ieToJ5Y:1551
@@ -26,7 +26,7 @@ Z9 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z10 !s108 1559161506.000000
+Z10 !s108 1559252105.000000
 Z11 !s107 ./area_calculator.sv|
 Z12 !s90 -reportprogress|300|./area_calculator.sv|
 !i113 1
@@ -102,7 +102,7 @@ R21
 R13
 vedge_search
 R1
-Z22 !s110 1559160210
+Z22 !s110 1559252213
 !i10b 1
 !s100 GF5jh3]OEE8FOJ9LD9FSY2
 IUc@[H]4jD[jMk`d]:52233
@@ -118,7 +118,7 @@ R9
 r1
 !s85 0
 31
-Z27 !s108 1559160210.000000
+Z27 !s108 1559252213.000000
 Z28 !s107 ./edge_search.sv|
 Z29 !s90 -reportprogress|300|./edge_search.sv|
 !i113 1
@@ -241,7 +241,7 @@ R21
 !i113 1
 R13
 vimage_memory
-R2
+Z38 !s110 1559258576
 !i10b 1
 !s100 >FNFV83FQh1k;gAfE8bdo3
 IKzSKkoXfcDi;<2We3n7O?3
@@ -255,60 +255,60 @@ R9
 r1
 !s85 0
 31
-R10
+Z39 !s108 1559258576.000000
 !s107 ./image_memory.v|
 !s90 -reportprogress|300|./image_memory.v|
 !i113 1
 R13
 vpixel_cache
 R1
-R2
+Z40 !s110 1559252781
 !i10b 1
 !s100 cM3QLfOJo>TF6@RS78hOb2
 I[Y48e@Wi1`V0e3T2mAK<H3
 R3
-Z38 !s105 pixel_cache_sv_unit
+Z41 !s105 pixel_cache_sv_unit
 S1
 R5
-Z39 w1559157939
-Z40 8./pixel_cache.sv
-Z41 F./pixel_cache.sv
+Z42 w1559157939
+Z43 8./pixel_cache.sv
+Z44 F./pixel_cache.sv
 L0 1
 R9
 r1
 !s85 0
 31
-R10
-Z42 !s107 ./pixel_cache.sv|
-Z43 !s90 -reportprogress|300|./pixel_cache.sv|
+Z45 !s108 1559252781.000000
+Z46 !s107 ./pixel_cache.sv|
+Z47 !s90 -reportprogress|300|./pixel_cache.sv|
 !i113 1
 R13
 vpixel_cache_testbench
 R1
-R2
+R40
 !i10b 1
 !s100 ]9BGTaYjNUbCkJB9m1FSY3
 IQgXfKPdZZ@oZDK`jM1AXI1
 R3
-R38
+R41
 S1
 R5
-R39
-R40
-R41
+R42
+R43
+R44
 L0 49
 R9
 r1
 !s85 0
 31
-R10
-R42
-R43
+R45
+R46
+R47
 !i113 1
 R13
 vpixel_counter
 R1
-!s110 1559146884
+R38
 !i10b 1
 !s100 [8A[8Ea__aoNG5TaNh[4g3
 ILgb@l2I:TP9m_=`4GUF>[2
@@ -324,7 +324,7 @@ R9
 r1
 !s85 0
 31
-!s108 1559146883.000000
+R39
 !s107 ./pixel_counter.sv|
 !s90 -reportprogress|300|./pixel_counter.sv|
 !i113 1
@@ -354,94 +354,94 @@ R35
 R13
 vshape_recogniser
 R1
-!s110 1559084959
+R38
 !i10b 1
-!s100 5;TGeD]<^=LTd_OjMFQ4^0
-IZh1?>InSzDTY>3_g`ohi63
+!s100 >DV6@APP4?58?^RW`>;[@2
+Io?P?>kX2gmIdzI>;I:[l11
 R3
-Z44 !s105 shape_recogniser_sv_unit
+Z48 !s105 shape_recogniser_sv_unit
 S1
 R5
-Z45 w1559084640
-Z46 8./shape_recogniser.sv
-Z47 F./shape_recogniser.sv
+Z49 w1559258566
+Z50 8./shape_recogniser.sv
+Z51 F./shape_recogniser.sv
 L0 25
 R9
 r1
 !s85 0
 31
-Z48 !s108 1559084959.000000
-Z49 !s107 ./shape_recogniser.sv|
-Z50 !s90 -reportprogress|300|./shape_recogniser.sv|
+R39
+Z52 !s107 ./shape_recogniser.sv|
+Z53 !s90 -reportprogress|300|./shape_recogniser.sv|
 !i113 1
 R13
 vshape_recogniser_testbench
 R1
-!s110 1559084960
+R38
 !i10b 1
-!s100 jm_aP;jezdHK:2bIA0aN40
-IX5[j_m3>]SKjzSL5`egmz0
+!s100 NI`LEl9W`Z[l4c>69_e2L0
+I0;8N<[CE0d7g9FhLGNC[d3
 R3
-R44
+R48
 S1
 R5
-R45
-R46
-R47
-L0 172
+R49
+R50
+R51
+L0 185
 R9
 r1
 !s85 0
 31
-R48
-R49
-R50
+R39
+R52
+R53
 !i113 1
 R13
 vsingle_frame_trigger
 R1
-Z51 !s110 1559002256
+Z54 !s110 1559002256
 !i10b 1
 !s100 VLNSO:mgDD_<e>_l_DgcE1
 IRch6_M_7HXGh7SdgCl5FY0
 R3
-Z52 !s105 single_frame_trigger_sv_unit
+Z55 !s105 single_frame_trigger_sv_unit
 S1
 R5
-Z53 w1558986589
-Z54 8./single_frame_trigger.sv
-Z55 F./single_frame_trigger.sv
+Z56 w1558986589
+Z57 8./single_frame_trigger.sv
+Z58 F./single_frame_trigger.sv
 L0 21
 R9
 r1
 !s85 0
 31
-Z56 !s108 1559002256.000000
-Z57 !s107 ./single_frame_trigger.sv|
-Z58 !s90 -reportprogress|300|./single_frame_trigger.sv|
+Z59 !s108 1559002256.000000
+Z60 !s107 ./single_frame_trigger.sv|
+Z61 !s90 -reportprogress|300|./single_frame_trigger.sv|
 !i113 1
 R13
 vsingle_frame_trigger_testbench
 R1
-R51
+R54
 !i10b 1
 !s100 LZTZK<UX;?g8^[CTM?S1=1
 IE3GHDD6_XMHaPYR<Q4>ee0
 R3
-R52
+R55
 S1
 R5
-R53
-R54
-R55
+R56
+R57
+R58
 L0 81
 R9
 r1
 !s85 0
 31
-R56
-R57
-R58
+R59
+R60
+R61
 !i113 1
 R13
 vvideo_still
@@ -451,20 +451,20 @@ R30
 !s100 ?Ne_X9az9C00TV6IbU1mF3
 I2Q;mWjh70od4Q[7KN=Sdf3
 R3
-Z59 !s105 video_still_sv_unit
+Z62 !s105 video_still_sv_unit
 S1
 R0
-Z60 w1558669659
-Z61 8./video_still.sv
-Z62 F./video_still.sv
+Z63 w1558669659
+Z64 8./video_still.sv
+Z65 F./video_still.sv
 L0 1
 R9
 r1
 !s85 0
 31
 R35
-Z63 !s107 ./video_still.sv|
-Z64 !s90 -reportprogress|300|./video_still.sv|
+Z66 !s107 ./video_still.sv|
+Z67 !s90 -reportprogress|300|./video_still.sv|
 !i113 1
 R13
 vvideo_still_testbench
@@ -474,19 +474,19 @@ R30
 !s100 T>i`[c9a@;h4nL42Ci`942
 I6Y3M4^je5FKV`DQjE^LDa1
 R3
-R59
+R62
 S1
 R0
-R60
-R61
-R62
+R63
+R64
+R65
 L0 57
 R9
 r1
 !s85 0
 31
 R35
-R63
-R64
+R66
+R67
 !i113 1
 R13

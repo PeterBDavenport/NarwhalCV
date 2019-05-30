@@ -24,10 +24,3 @@ module edge_search(input logic [9:0] start_x, start_y, search_width, search_heig
                    );
 
 endmodule
-
-module get_area(input logic [9:0] bounding_x0, bounding_x1, bounding_y0, bounding_y1,
-                input logic start, clk, reset,
-                output logic done,
-                output logic [19:0] area);
-
-endmodule

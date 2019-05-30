@@ -80,6 +80,12 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
     // RGB -> Boolean Transformation via brightness cutoff.
     wire pixel_darker_than_cutoff;
     assign pixel_darker_than_cutoff = ((iVGA_R < SW[7:0]) && (iVGA_G < SW[7:0]) && (iVGA_B < SW[7:0]));
+    
+    wire [9:0] right_x, left_x, top_y, bottom_y;
+    assign right_x = WIDTH*3/4;
+    assign left_x = WIDTH/4;
+    assign top_y = HEIGHT/4;
+    assign bottom_y = HEIGHT*3/4;
 
     // Display Pass Through - Presentation to user.
     always_ff @(posedge VGA_CLK) begin
@@ -90,9 +96,15 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
             oVGA_R <= iVGA_R;
         end
         
-        {oVGA_G, oVGA_B} <= {iVGA_G, iVGA_B};
+        if( (x == right_x) || (x == left_x) || (top_y == y) || (bottom_y == y))
+            {oVGA_G, oVGA_B} <= {8'hFF, 8'hFF};
+        else
+            {oVGA_G, oVGA_B} <= {iVGA_G, iVGA_B};
+
         {oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= {iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};
     end
+
+
    
     /* Boolean Value Recording.
      *  Here we are writing the stream of incoming pixels into the image memory.
@@ -135,7 +147,7 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
         pixel_buffer <= (pixel_darker_than_cutoff && iVGA_BLANK_N) | (pixel_buffer << 1);
         
         // Set the write address based on the coordinates.
-        wraddress <= (y*80) + (x>>3);
+        wraddress <= (y*(WIDTH/8)) + (x>>3);
         
         // Only record once every eight horizontal pixels.
         if(((x+1)%8) == 0 && (x > 0) && iVGA_BLANK_N) begin
@@ -145,9 +157,10 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
             write_en <= 1'b0;
     end
     
-    /* Run the algoritm on the 
-     *  
+    /* Algorithm controller
      */
+     
+     
    
    // Set display outputs.
    assign HEX0 = '1;
@@ -171,9 +184,9 @@ endmodule
 `timescale 1 ps / 1 ps
 module shape_recogniser_testbench();
 	// Can reduce width and height to speed up testing
-	parameter WIDTH = 480;
-	parameter HEIGHT = 16;
-	parameter NUM_FRAMES = 8;  // We run until we've seen this many full video frames on the output.
+	parameter WIDTH = 104;
+	parameter HEIGHT = 104;
+	parameter NUM_FRAMES = 2;  // We run until we've seen this many full video frames on the output.
 
 	// Places to store the input image.  Set below.
 	logic				[7:0]		inputR	[WIDTH-1:0][HEIGHT-1:0]; 
@@ -237,28 +250,40 @@ module shape_recogniser_testbench();
     // reset is active high, reset_n is active low.
 	logic reset_n; // Active low (reset ON when reset == 0)
 	initial begin
-		reset_n <= 0; reset <= 1; @(posedge VGA_CLK);
+		KEY[2] <= 1'b0; reset_n <= 0; reset <= 1; @(posedge VGA_CLK);
 		@(posedge VGA_CLK);
 		@(posedge VGA_CLK);
 		@(posedge VGA_CLK);
 		@(posedge VGA_CLK);
 		@(posedge VGA_CLK);
-		reset_n <= 1; reset <= 0; 
+		KEY[2] <= 1'b1; reset_n <= 1; reset <= 0; 
 	end	
 
 	// Initialize the inputs to an obvious pattern
 	initial begin
+        // Draw a square.
 		for (int i=0; i<WIDTH; i++) begin
 			for (int j=0; j<HEIGHT; j++) begin
-				inputR[i][j] = i;
-				inputG[i][j] = j;
-				inputB[i][j] = i+j;
+                inputR[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
+				inputG[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
+				inputB[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
 			end
 		end
+        
+        /*
+        // Draw a triangle.
+        for (int i=0; i<WIDTH; i++) begin
+			for (int j=0; j<HEIGHT; j++) begin
+                inputR[i][j] = (i > 25) && (j > 25) && (i < j) ? 0xFF : 0x00;
+				inputG[i][j] = (i > 25) && (j > 25) && (i < j) ? 0xFF : 0x00;
+				inputB[i][j] = (i > 25) && (j > 25) && (i < j) ? 0xFF : 0x00;
+			end
+		end
+        */
 	end
 	
 	// Set up the user inputs.
-	assign KEY = '0;
+	//assign KEY = '0;
 	assign SW = 9'b00001111;
  
 	// Parameters to config VGA.  Adapted from VGA_Param.h
@@ -281,8 +306,8 @@ module shape_recogniser_testbench();
 	parameter	V_BLANK	   =	V_SYNC_FRONT+V_SYNC_CYC+V_SYNC_BACK;
 
 	// Set up the VGA timing signals.  Adapted from VGA_Controller.v
-   logic		[12:0]		H_Cont; // Position horizontally
-   logic		[12:0]		V_Cont; // Position vertically
+    logic		[12:0]		H_Cont; // Position horizontally
+    logic		[12:0]		V_Cont; // Position vertically
 
 	always_ff @(posedge VGA_CLK) begin
 		if (!reset_n) begin
@@ -353,8 +378,10 @@ module shape_recogniser_testbench();
 	always_ff @(posedge VGA_CLK) begin
 		if (!reset_n) begin
 			frames_seen <= 0;
+            KEY[0] <= 1'b0;
 		end else if (prev_iVGA_VS && !iVGA_VS) begin
 			if (frames_seen == NUM_FRAMES) $stop();
+            if (frames_seen == 1) KEY[0] <= 1'b1;
 			frames_seen <= frames_seen + 1;
 		end
 		prev_iVGA_VS <= iVGA_VS;
