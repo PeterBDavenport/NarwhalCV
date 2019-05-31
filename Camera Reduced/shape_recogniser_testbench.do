@@ -16,7 +16,8 @@ vsim -voptargs="+acc" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do shape_recogniser_testbench_window.do
+do shape_recogniser_testbench_window_states.do
+#do shape_recogniser_testbench_window.do
 
 # Set the window types
 view wave

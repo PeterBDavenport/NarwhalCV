@@ -81,11 +81,7 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
     wire pixel_darker_than_cutoff;
     assign pixel_darker_than_cutoff = ((iVGA_R < SW[7:0]) && (iVGA_G < SW[7:0]) && (iVGA_B < SW[7:0]));
     
-    wire [9:0] right_x, left_x, top_y, bottom_y;
-    assign right_x = WIDTH*3/4;
-    assign left_x = WIDTH/4;
-    assign top_y = HEIGHT/4;
-    assign bottom_y = HEIGHT*3/4;
+    reg [9:0] right_x, left_x, top_y, bottom_y;
 
     // Display Pass Through - Presentation to user.
     always_ff @(posedge VGA_CLK) begin
@@ -115,11 +111,11 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
      */
      
     // RAM module for boolean image memory.
-    reg [7:0]   write_data;
-    reg [7:0]   outputData;
-    reg [15:0]  rdaddress;
-    reg [15:0]  wraddress;
-    reg write_en;
+    reg  [7:0]   write_data;
+    wire [7:0]   outputData;
+    reg  [15:0]  rdaddress;
+    reg  [15:0]  wraddress;
+    reg          write_en;
     image_memory image(.clock(VGA_CLK),
                        .data(write_data),
                        .rdaddress(rdaddress),
@@ -156,9 +152,157 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
         end else
             write_en <= 1'b0;
     end
-    
-    /* Algorithm controller
-     */
+
+
+/* 
+ * Algoritm trigger when SW[0] goes from 1 -> 0.
+ */
+    reg start_algorithm;
+    reg last_SW0_val;
+    always_ff @(posedge VGA_CLK) begin
+        if(last_SW0_val && !KEY[0]) start_algorithm <= 1'b1;
+        else                       start_algorithm <= 1'b0;
+        last_SW0_val <= KEY[0];
+    end
+
+/*
+ * The algorithm controller will begin by finding the top edge,  right
+ * edge, bottom edge, than left. From that it will load a small register
+ * with the coordinates of the box. This will be used to draw the box.
+ * ...
+ *
+ */
+
+enum { S_IDLE,
+       S_TOP, S_TOP_WAIT, S_TOP_DONE,
+       S_RIGHT, S_RIGHT_WAIT, 
+       S_BOTTOM, S_BOTTOM_WAIT,
+       S_LEFT, S_LEFT_WAIT,
+       S_AREA, S_AREA_WAIT,
+       S_DONE } ps, ns;
+
+logic start_alogrithm;
+logic edge_done;
+logic edge_found; // TODO? Check when we dont find anything.
+logic area_done;
+logic [1:0] current_direction;
+logic start_search;
+logic start_area;
+
+//search and area wires connect module to pixel cache through mux
+//selected by case logic in ff block
+logic [9:0] x_search_wire, y_search_wire;
+logic [9:0] x_area_wire, y_area_wire;
+logic [9:0] x_wire, y_wire;
+wire pixel, ready;
+logic [19:0] area;
+reg reset_search;
+
+assign x_wire = (ps == S_AREA || ps == S_AREA_WAIT) ? x_area_wire : x_search_wire;
+assign y_wire = (ps == S_AREA || ps == S_AREA_WAIT) ? y_area_wire : y_search_wire;
+
+pixel_cache  cache(.clk(VGA_CLK), .reset(reset), .pixel(pixel), .ready(ready), .x(x_wire), .y(y_wire), .rdaddress(rdaddress), .rdata(outputData));
+
+edge_search  box(.search_x0(WIDTH/4), .search_y0(HEIGHT/4), .search_x1(WIDTH*3/4), .search_y1(HEIGHT*3/4), 
+                     .start(start_search), .clk(VGA_CLK), .reset(reset_search), .search_direction(current_direction),
+                     .done(edge_done), .found(edge_found), .x(x_search_wire), .y(y_search_wire), .pixel(pixel), .ready(ready));
+
+area_calculator  shape(.x0(WIDTH/4), .y0(HEIGHT/4), .x1(WIDTH*3/4), .y1(HEIGHT*3/4), .start(start_area),
+                       .clk(VGA_CLK), .done(area_done), .area(area), .x(x_area_wire), .y(y_area_wire), .pixel(pixel), .ready(ready));
+
+
+always_comb begin
+    case (ps) 
+    S_IDLE          : begin
+                        if(start_algorithm) ns = S_TOP;
+                        else                ns = S_IDLE;
+                      end
+    S_TOP           :                       ns = S_TOP_WAIT; 
+    S_TOP_WAIT      : begin 
+                        if(edge_done)       ns = S_TOP_DONE;
+                        else                ns = S_TOP_WAIT;
+                      end
+    S_TOP_DONE      : begin
+                        if(!edge_done)      ns = S_RIGHT;
+                        else                ns = S_TOP_DONE;
+                      end
+    S_RIGHT         :                       ns = S_RIGHT_WAIT;
+    S_RIGHT_WAIT    : begin
+                        if(edge_done)       ns = S_BOTTOM;
+                        else                ns = S_RIGHT_WAIT;
+                      end
+    S_BOTTOM        :                       ns = S_BOTTOM_WAIT;
+    S_BOTTOM_WAIT   : begin
+                        if(edge_done)       ns = S_RIGHT;
+                        else                ns = S_TOP_WAIT;
+                      end
+    S_LEFT          :                       ns = S_LEFT_WAIT;
+    S_LEFT_WAIT     : begin
+                        if(edge_done)       ns = S_AREA;
+                        else                ns = S_LEFT_WAIT;
+                      end
+    S_AREA          :                       ns = S_AREA_WAIT;
+    S_AREA_WAIT     : begin
+                        if(area_done)       ns = S_DONE;
+                        else                ns = S_AREA_WAIT;
+                      end
+    S_DONE          :                       ns = S_DONE;
+	 default         : 							  ns = S_IDLE;
+    endcase
+end
+
+always_ff @(posedge VGA_CLK) begin
+    if(reset)
+        ps <= S_IDLE;
+    else begin
+        ps <= ns;
+        case (ps) 
+        S_IDLE          : reset_search <= 0;
+        S_TOP           : begin
+                            start_search <= 1;          //to find top, start at the top left 
+                            current_direction <= 2'b01; //scan right than step down
+                          end 
+        S_TOP_WAIT      : begin 
+                            start_search <= 0;
+                            top_y <= y_wire;
+                          end
+        S_TOP_DONE      : begin
+                            start_search <= 1;
+                          end
+        S_RIGHT         : begin
+                            start_search <= 0;          //to find right, start at the top right 
+                            current_direction <= 2'b10; //scan down than step left
+                          end 
+        S_RIGHT_WAIT    : begin 
+                            start_search <= 0;
+                            right_x <= x_wire;
+                          end
+        S_BOTTOM        : begin
+                            start_search <= 1;          // Start at the bottom left 
+                            current_direction <= 2'b00; // scan to the right than step up
+                          end 
+        S_BOTTOM_WAIT   : begin 
+                            start_search <= 0;
+                            bottom_y <= y_wire;
+                          end
+        S_LEFT          : begin
+                            start_search <= 1;          // Start at the top right
+                            current_direction <= 2'b11; // scan down than step right
+                          end 
+        S_LEFT_WAIT     : begin 
+                            start_search <= 0;
+                            left_x <= x_wire;
+                          end
+        S_AREA          : begin
+                            start_area <= 1;
+                          end
+        S_AREA_WAIT     : begin
+                            start_area <= 0;
+                          end
+        endcase
+    end
+end
+
      
      
    
@@ -264,9 +408,13 @@ module shape_recogniser_testbench();
         // Draw a square.
 		for (int i=0; i<WIDTH; i++) begin
 			for (int j=0; j<HEIGHT; j++) begin
-                inputR[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
-				inputG[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
-				inputB[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
+                //inputR[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
+				//inputG[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
+				//inputB[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
+                inputR[i][j] = 8'h00;//i%2;
+				inputG[i][j] = 8'h00;//i%2;
+				inputB[i][j] = 8'h00;//i%2;
+                
 			end
 		end
         
@@ -378,10 +526,10 @@ module shape_recogniser_testbench();
 	always_ff @(posedge VGA_CLK) begin
 		if (!reset_n) begin
 			frames_seen <= 0;
-            KEY[0] <= 1'b0;
+            KEY[0] <= 1'b1;
 		end else if (prev_iVGA_VS && !iVGA_VS) begin
 			if (frames_seen == NUM_FRAMES) $stop();
-            if (frames_seen == 1) KEY[0] <= 1'b1;
+            if (frames_seen == 1) KEY[0] <= 1'b0;
 			frames_seen <= frames_seen + 1;
 		end
 		prev_iVGA_VS <= iVGA_VS;

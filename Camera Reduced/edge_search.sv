@@ -99,6 +99,12 @@ module edge_search(
                             y_count <= search_y0; 
                         end
                     endcase
+                    
+                    // Reset our signals.
+                    //done    <= '0;
+                    //found   <= '0;
+                    //x       <= '0;
+                    //y       <= '0;
                 end
                 REQ_PIXEL: begin
                     x <= x_count;
@@ -225,20 +231,21 @@ module edge_search_testbench();
         wren <= 0; @(posedge clk);
     
         start <= 0;
-        search_x0 <= 0;
-        search_y0 <= 0;
-        search_x1 <= 9;
-        search_y1 <= 9;
-
+        search_x0 <= 2;
+        search_y0 <= 2;
+        search_x1 <= 10;
+        search_y1 <= 10;
+        
+        reset<=1; @(posedge clk);
+        reset<=0; @(posedge clk);
+        
         // Searches that complete
         for(dir=0;dir<4;dir++) begin
             search_direction <= dir;
-            reset<=1; @(posedge clk);
-            reset<=0; @(posedge clk);
             start<=1; @(posedge clk);
             start<=0; @(posedge clk);
             
-            repeat(10*10*3) @(posedge clk);
+            repeat(10*10*4) @(posedge clk);
         end
         
         $stop;

@@ -39,7 +39,7 @@ module area_calculator (
     end
     
 endmodule
-
+/*
 `timescale 1 ps / 1 ps
 module area_calculator_testbench();
 
@@ -126,3 +126,4 @@ module area_calculator_testbench();
         $stop;
     end
 endmodule
+*/

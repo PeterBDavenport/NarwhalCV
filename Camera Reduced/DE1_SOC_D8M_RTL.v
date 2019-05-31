@@ -130,8 +130,7 @@ module DE1_SOC_D8M_RTL(
 	wire		          		post_VGA_SYNC_N;
 	wire		          		post_VGA_VS;
 	
-	shape_recogniser #(.WIDTH(640), .HEIGHT(480))
-		filter (.VGA_CLK(VGA_CLK), .reset(~KEY[2]),
+	shape_recogniser our_shape_recog(.VGA_CLK(VGA_CLK), .reset(~KEY[2]),
 					.iVGA_B(pre_VGA_B), .iVGA_G(pre_VGA_G), .iVGA_R(pre_VGA_R),
 					.iVGA_HS(pre_VGA_HS), .iVGA_VS(pre_VGA_VS),
 					.iVGA_SYNC_N(pre_VGA_SYNC_N), .iVGA_BLANK_N(pre_VGA_BLANK_N),
