@@ -21,19 +21,19 @@ module display(circle, square, triangle, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	
 	always_comb begin
 		if(circle) begin
-			//C				I				  r				 c					L				  E
-			dis5 = 5'h0C; dis4 = 5'h01; dis4 = 5'h10; dis3 = 5'h0C; dis2 = 5'h11; dis1 = 5'h0E; dis0 = '1;
+			//C			I			r	   	  c          L          E
+			num5 = 12; num4 = 1; num3 = 16; num2 = 12; num1 = 17; num0 = 14;
 		end
 		else if(square) begin
-			//s				q			     u				 A					r				  E
-			dis5 = 5'h13; dis4 = 5'h12; dis4 = 5'h17; dis3 = 5'h0A; dis2 = 5'h11; dis1 = 5'h0E; dis0 = '1;
+			//s	     q	       u	         A	        r          E
+			num5 = 20; num4 = 19; num3 = 24; num2 = 10; num1 = 16; num0 = 14;
 		end
 		else if(triangle) begin 
-			//t				r			     i				 A					n				  g            l
-			dis5 = 5'h15; dis4 = 5'h10; dis4 = 5'h01; dis3 = 5'h0A; dis2 = 5'h16; dis1 = 5'h18; dis0 = 5'h11;		
+			//t		  r          i         A          n          g            
+			num5 = 22; num4 = 16; num3 = 1; num2 = 10; num1 = 23; num0 = 25; 		
 		end
 		else begin
-			dis5 = '1; dis4 = '1; dis4 = '1; dis3 = '1; dis2 = '1; dis1 = '1; dis0 = '1;
+			num5 = '1; 	  num4 = '1;    num3 = '1; 	num2 = '1;    num1 = '1;    num0 = '1; 	
 		end
 			
 	end
@@ -42,13 +42,13 @@ endmodule
 
 
 module display_testbench();
-	logic  [4:0] num;
+	logic  circle, square, triangle;
 	logic  [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; 
 	display dut (.*); // ".*" Implicitly connects all ports to variables with matching names
 	integer i;
 	initial begin
 		for(i = 0; i < 25; i++) begin     
-			num = i; #10;  
+			circle<=1; square<=1; triangle<=1; 
 		end  
 	end
 endmodule
