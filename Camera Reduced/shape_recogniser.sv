@@ -59,23 +59,21 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
    input logic [8:0] SW   // SW[9] reserved for auto-focus mode.
 );
 
-     // Set display outputs.
-     assign LEDR = '0;
+//     // Set display outputs.
+//     assign LEDR[0] = circle_temp;
+//     assign LEDR[1] = square_temp;
+//     assign LEDR[9:2]= '0;
 
 	 /* The following is responisble for displaying the shape detected to the
 	  * seven segment display. Shape is only when detected.
 	  */
 	  logic circle, square, triangle;
-	  assign circle = SW[0];
-	  assign square = SW[1];
-	  assign triangle = SW[2];
 	  
 	  display shape_detected(circle, 
 									 square, 
 									 triangle, 
 									 HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
-	  
-
+    
     /*
      * The basic idea here is that we are being given a constant stream of video, or a frozen
      * frame of video looping over and over again, and we want to load this into an array to
@@ -324,6 +322,48 @@ always_ff @(posedge VGA_CLK) begin
         endcase
     end
 end
+
+    /* The following takes the bounding box and area to determine the shape.
+     */
+
+     logic [19:0] square_cuttoff;
+     logic [19:0] circle_cutoff;
+     
+     logic [19:0] bounding_box_area; 
+     logic [9:0]radius;
+     logic [9:0 ]delta_x, delta_y;
+     logic [19:0] area_of_circle;
+     logic [19:0] shape_factor;
+     
+     //logic square_temp, circle_temp, triangle_temp;
+     
+     assign delta_x = right_x - left_x;     
+     assign delta_y = bottom_y - top_y;
+     
+     //radius is average between height and width of bounding box
+     //assign radius = (delta_x+delta_y)>>2;
+     //without float, to find area of circle, multiply by 100 times radius squared shifted by 5
+     //assign area_of_circle = 100*radius*radius>>5; 
+     assign bounding_box_area = delta_x*delta_y; //area of bounding box
+     
+     assign square_cuttoff = bounding_box_area * 104 >> 7;
+     assign circle_cutoff = bounding_box_area * 84 >> 7;
+     
+     
+     
+    // assign triangle_temp = ( bounding_box_area / saved_area 
+     //assign square_temp = (saved_area < bounding_box_area + 10 && saved_area >  bounding_box_area - tolerance) ? 1 : 0;
+     //assign circle_temp = (saved_area < area_of_circle + tolerance && saved_area > area_of_circle - tolerance) ? 1 : 0;
+     
+     always_comb begin
+        if(saved_area > square_cuttoff) begin
+            square = 1'b1; circle = 1'b0; triangle = 1'b0;
+        end else if(saved_area > circle_cutoff) begin
+            square = 1'b0; circle = 1'b1; triangle = 1'b0;
+        end else   begin
+            square = 1'b0; circle = 1'b0; triangle = 1'b1;
+        end
+     end
 
 endmodule
 

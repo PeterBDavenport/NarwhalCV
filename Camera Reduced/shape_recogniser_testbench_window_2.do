@@ -45,9 +45,19 @@ add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_area_wire
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_search_wire
 add wave -noupdate /shape_recogniser_testbench/dut/pixel
 add wave -noupdate /shape_recogniser_testbench/dut/ready
+add wave -noupdate -divider Calcs
+add wave -noupdate /shape_recogniser_testbench/dut/saved_area
+add wave -noupdate /shape_recogniser_testbench/dut/square_cuttoff
+add wave -noupdate /shape_recogniser_testbench/dut/circle_cutoff
+add wave -noupdate /shape_recogniser_testbench/dut/circle
+add wave -noupdate /shape_recogniser_testbench/dut/square
+add wave -noupdate /shape_recogniser_testbench/dut/triangle
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/bounding_box_area
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/delta_x
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/delta_y
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {19958428 ps} 0} {{Cursor 2} {5654950 ps} 0} {{Cursor 3} {31934593 ps} 0} {{Cursor 4} {3018825 ps} 0} {{Cursor 5} {7419955 ps} 0}
-quietly wave cursor active 4
+WaveRestoreCursors {{Cursor 1} {19958428 ps} 0} {{Cursor 2} {6550350 ps} 0} {{Cursor 3} {31934593 ps} 0} {{Cursor 4} {1700075 ps} 0} {{Cursor 5} {7419955 ps} 0}
+quietly wave cursor active 2
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 87
 configure wave -justifyvalue left
