@@ -9,6 +9,7 @@ vlog "./pixel_counter.sv"
 vlog "./image_memory.v"
 vlog "./edge_search.sv"
 vlog "./pixel_cache.sv"
+vlog "./area_calculator.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the

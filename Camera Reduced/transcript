@@ -1,448 +1,13 @@
 # Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
-do shape_recogniser.sv
-# ** Error: invalid command name "/*"
-# Error in macro ./shape_recogniser.sv line 1
-# invalid command name "/*"
-#     while executing
-# "/*"
 do shape_recogniser_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:50:12 on May 31,2019
+# Start time: 13:54:14 on May 31,2019
 # vlog -reportprogress 300 ./shape_recogniser.sv 
 # -- Compiling module shape_recogniser
+# ** Error: (vlog-13057) ./shape_recogniser.sv(90): Expecting numeric digits.
 # -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 12:50:12 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:50:12 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 12:50:12 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:50:12 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 12:50:12 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:50:12 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 12:50:13 on May 31,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:50:13 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 12:50:13 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 12:50:13 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftncsbjx".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftncsbjx
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(526)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 526
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:15 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 12:53:16 on May 31,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:16 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 12:53:16 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:16 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 12:53:16 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:16 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 12:53:16 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:16 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 12:53:16 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 12:53:23 on May 31,2019, Elapsed time: 0:03:10
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 12:53:23 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlft6khx1g".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft6khx1g
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(533)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 533
-add wave -position end  sim:/shape_recogniser_testbench/dut/algoritm_running
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/wave.do}
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:51 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 12:53:51 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:51 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 12:53:51 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:52 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 12:53:52 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:52 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 12:53:52 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:53:52 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 12:53:52 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 12:53:55 on May 31,2019, Elapsed time: 0:00:32
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 12:53:55 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlft9cwqdf".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft9cwqdf
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(533)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 533
-add wave -position end  sim:/shape_recogniser_testbench/dut/algoritm_running
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/shape_recogniser_testbench_window_2.do}
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:54:35 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 12:54:35 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:54:35 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 12:54:35 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:54:35 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 12:54:35 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:54:35 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 12:54:35 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:54:36 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 12:54:36 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 12:54:37 on May 31,2019, Elapsed time: 0:00:42
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 12:54:37 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(217): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(221): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlft98v2e9".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft98v2e9
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(533)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 533
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:35 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# ** Error: ./shape_recogniser.sv(164): (vlog-2730) Undefined variable: 'ps'.
-# ** Error: ./shape_recogniser.sv(164): (vlog-2730) Undefined variable: 'S_IDLE'.
-# ** Error: ./shape_recogniser.sv(164): (vlog-2730) Undefined variable: 'S_DONE'.
-# ** Error: ./shape_recogniser.sv(167): (vlog-2730) Undefined variable: 'start_algorithm'.
-# ** Error: ./shape_recogniser.sv(179): Enum literal name 'S_IDLE' already exists.
-# ** Error: ./shape_recogniser.sv(185): Enum literal name 'S_DONE' already exists.
-# ** Error (suppressible): ./shape_recogniser.sv(185): (vlog-2388) 'ps' already declared in this scope (#ublk#58072290#163).
-# ** Error: ./shape_recogniser.sv(200): Illegal declaration after the statement near line '164'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: ./shape_recogniser.sv(204): Illegal declaration after the statement near line '200'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: ./shape_recogniser.sv(207): (vlog-2730) Undefined variable: 'pixel_cache'.
-# ** Error: (vlog-13069) ./shape_recogniser.sv(207): near "#": syntax error, unexpected '#'.
-# ** Error: ./shape_recogniser.sv(211): (vlog-2730) Undefined variable: 'pixel'.
-# ** Error: ./shape_recogniser.sv(211): (vlog-2730) Undefined variable: 'ready'.
-# ** Error: ./shape_recogniser.sv(211): Checker 'edge_search' not found.  Instantiation 'box' must be of a visible checker.
-# ** Error: ./shape_recogniser.sv(214): Checker 'area_calculator' not found.  Instantiation 'shape' must be of a visible checker.
-# ** Error: (vlog-13069) ./shape_recogniser.sv(217): near "always_comb": syntax error, unexpected "SystemVerilog keyword 'always_comb'".
-# ** Error: (vlog-13069) ./shape_recogniser.sv(223): near "ns": syntax error, unexpected IDENTIFIER, expecting "SystemVerilog keyword 'assert' " or "SystemVerilog keyword 'assume' " or restrict .
-# ** Error (suppressible): ./shape_recogniser.sv(225): (vlog-2720) A generate begin/end pair has been found outside of generate construct.
-# ** Error: ./shape_recogniser.sv(225): (vlog-2730) Undefined variable: 'edge_done'.
-# ** Error: (vlog-13069) ./shape_recogniser.sv(225): near "=": syntax error, unexpected '='.
-# ** Error: ./shape_recogniser.sv(225): (vlog-13205) Syntax error found in the scope following 'ns'. Is there a missing '::'?
-# End time: 13:02:35 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 21, Warnings: 0
-# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./shape_recogniser_testbench.do line 7
-# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog "./shape_recogniser.sv""
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:02:56 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# ** Error: ./shape_recogniser.sv(203): (vlog-2730) Undefined variable: 'start_algorithm'.
-# ** Error: ./shape_recogniser.sv(208): (vlog-2730) Undefined variable: 'pixel_cache'.
-# ** Error: (vlog-13069) ./shape_recogniser.sv(208): near "#": syntax error, unexpected '#'.
-# ** Error: ./shape_recogniser.sv(212): Checker 'edge_search' not found.  Instantiation 'box' must be of a visible checker.
-# ** Error: ./shape_recogniser.sv(215): Checker 'area_calculator' not found.  Instantiation 'shape' must be of a visible checker.
-# ** Error: (vlog-13069) ./shape_recogniser.sv(218): near "always_comb": syntax error, unexpected "SystemVerilog keyword 'always_comb'".
-# ** Error: ./shape_recogniser.sv(224): 'S_TOP' already exists - must not be redefined.
-# ** Error: (vlog-13069) ./shape_recogniser.sv(224): near "ns": syntax error, unexpected IDENTIFIER, expecting "SystemVerilog keyword 'assert' " or "SystemVerilog keyword 'assume' " or restrict .
-# ** Error (suppressible): ./shape_recogniser.sv(226): (vlog-2720) A generate begin/end pair has been found outside of generate construct.
-# ** Error: ./shape_recogniser.sv(226): 'S_TOP_WAIT' already exists; must not be redefined as a generate block
-# ** Error: (vlog-13069) ./shape_recogniser.sv(226): near "=": syntax error, unexpected '='.
-# ** Error: ./shape_recogniser.sv(226): (vlog-13205) Syntax error found in the scope following 'ns'. Is there a missing '::'?
-# End time: 13:02:56 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 12, Warnings: 0
-# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./shape_recogniser_testbench.do line 7
-# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog "./shape_recogniser.sv""
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:03:31 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# ** Error: ./shape_recogniser.sv(316): (vlog-2730) Undefined variable: 'algoritm_running'.
-# -- Compiling module shape_recogniser_testbench
-# End time: 13:03:32 on May 31,2019, Elapsed time: 0:00:01
+# End time: 13:54:15 on May 31,2019, Elapsed time: 0:00:01
 # Errors: 1, Warnings: 0
 # ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
 # Error in macro ./shape_recogniser_testbench.do line 7
@@ -452,243 +17,54 @@ do shape_recogniser_testbench.do
 do shape_recogniser_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:01 on May 31,2019
+# Start time: 13:54:45 on May 31,2019
 # vlog -reportprogress 300 ./shape_recogniser.sv 
 # -- Compiling module shape_recogniser
 # -- Compiling module shape_recogniser_testbench
 # 
 # Top level modules:
 # 	shape_recogniser_testbench
-# End time: 13:04:01 on May 31,2019, Elapsed time: 0:00:00
+# End time: 13:54:45 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:01 on May 31,2019
+# Start time: 13:54:45 on May 31,2019
 # vlog -reportprogress 300 ./pixel_counter.sv 
 # -- Compiling module pixel_counter
 # 
 # Top level modules:
 # 	pixel_counter
-# End time: 13:04:01 on May 31,2019, Elapsed time: 0:00:00
+# End time: 13:54:45 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:01 on May 31,2019
+# Start time: 13:54:45 on May 31,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 13:04:01 on May 31,2019, Elapsed time: 0:00:00
+# End time: 13:54:45 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:01 on May 31,2019
+# Start time: 13:54:45 on May 31,2019
 # vlog -reportprogress 300 ./edge_search.sv 
 # -- Compiling module edge_search
 # 
 # Top level modules:
 # 	edge_search
-# End time: 13:04:02 on May 31,2019, Elapsed time: 0:00:01
+# End time: 13:54:45 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:02 on May 31,2019
+# Start time: 13:54:45 on May 31,2019
 # vlog -reportprogress 300 ./pixel_cache.sv 
 # -- Compiling module pixel_cache
 # -- Compiling module pixel_cache_testbench
 # 
 # Top level modules:
 # 	pixel_cache_testbench
-# End time: 13:04:02 on May 31,2019, Elapsed time: 0:00:00
+# End time: 13:54:45 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:04:03 on May 31,2019, Elapsed time: 0:09:26
-# Errors: 40, Warnings: 10
 # vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:04:03 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(211): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(211): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(211): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(211): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(215): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(215): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(215): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(215): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftr439dq".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftr439dq
-# ** Error: (vish-4014) No objects found matching '/shape_recogniser_testbench/dut/algoritm_running'.
-# Executing ONERROR command at macro ./shape_recogniser_testbench_window_2.do line 22
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(527)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 527
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/shape_recogniser_testbench_window_2.do}
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:56 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:04:56 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:56 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:04:56 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:56 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:04:56 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:56 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:04:56 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:04:56 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:04:56 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:04:58 on May 31,2019, Elapsed time: 0:00:55
-# Errors: 3, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:04:58 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(211): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(211): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(211): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(211): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(215): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(215): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(215): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(215): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftgxq0ns".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftgxq0ns
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(527)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 527
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:06:01 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:06:01 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:06:01 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:06:01 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:06:01 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:06:01 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:06:01 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:06:01 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:06:01 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:06:02 on May 31,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# End time: 13:06:07 on May 31,2019, Elapsed time: 0:01:09
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:06:07 on May 31,2019
+# Start time: 13:54:45 on May 31,2019
 # Loading sv_std.std
 # Loading work.shape_recogniser_testbench
 # Loading work.shape_recogniser
@@ -719,163 +95,68 @@ do shape_recogniser_testbench.do
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlfti84vn3".
+#           Attempting to use alternate WLF file "./wlft32vvqz".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfti84vn3
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(525)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 525
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:09:58 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:09:59 on May 31,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:09:59 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:09:59 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:09:59 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:09:59 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:09:59 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:09:59 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:09:59 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:09:59 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:10:01 on May 31,2019, Elapsed time: 0:03:54
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:10:01 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(218): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(218): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(218): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(218): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftf8kvxx".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftf8kvxx
+#           Using alternate file: ./wlft32vvqz
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
 # ** Note: $stop    : ./shape_recogniser.sv(529)
 #    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
 # Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 529
-add wave -position end  sim:/shape_recogniser_testbench/dut/algoritm_started
-add wave -position end  sim:/shape_recogniser_testbench/dut/start_alogrithm
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/shape_recogniser_testbench_window_2.do}
 do shape_recogniser_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:10:57 on May 31,2019
+# Start time: 13:57:33 on May 31,2019
 # vlog -reportprogress 300 ./shape_recogniser.sv 
 # -- Compiling module shape_recogniser
 # -- Compiling module shape_recogniser_testbench
 # 
 # Top level modules:
 # 	shape_recogniser_testbench
-# End time: 13:10:57 on May 31,2019, Elapsed time: 0:00:00
+# End time: 13:57:33 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:10:57 on May 31,2019
+# Start time: 13:57:33 on May 31,2019
 # vlog -reportprogress 300 ./pixel_counter.sv 
 # -- Compiling module pixel_counter
 # 
 # Top level modules:
 # 	pixel_counter
-# End time: 13:10:57 on May 31,2019, Elapsed time: 0:00:00
+# End time: 13:57:33 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:10:57 on May 31,2019
+# Start time: 13:57:33 on May 31,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 13:10:57 on May 31,2019, Elapsed time: 0:00:00
+# End time: 13:57:33 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:10:58 on May 31,2019
+# Start time: 13:57:33 on May 31,2019
 # vlog -reportprogress 300 ./edge_search.sv 
 # -- Compiling module edge_search
 # 
 # Top level modules:
 # 	edge_search
-# End time: 13:10:58 on May 31,2019, Elapsed time: 0:00:00
+# End time: 13:57:34 on May 31,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:10:58 on May 31,2019
+# Start time: 13:57:34 on May 31,2019
 # vlog -reportprogress 300 ./pixel_cache.sv 
 # -- Compiling module pixel_cache
 # -- Compiling module pixel_cache_testbench
 # 
 # Top level modules:
 # 	pixel_cache_testbench
-# End time: 13:10:58 on May 31,2019, Elapsed time: 0:00:00
+# End time: 13:57:34 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:10:59 on May 31,2019, Elapsed time: 0:00:58
+# End time: 13:57:36 on May 31,2019, Elapsed time: 0:02:51
 # Errors: 0, Warnings: 10
 # vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:10:59 on May 31,2019
+# Start time: 13:57:36 on May 31,2019
 # Loading sv_std.std
 # Loading work.shape_recogniser_testbench
 # Loading work.shape_recogniser
@@ -888,87 +169,759 @@ do shape_recogniser_testbench.do
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(218): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(218): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(218): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(218): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftkix5ha".
+#           Attempting to use alternate WLF file "./wlft2t9010".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftkix5ha
+#           Using alternate file: ./wlft2t9010
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
 # ** Note: $stop    : ./shape_recogniser.sv(529)
 #    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
 # Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 529
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:58:18 on May 31,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
+# 
+# Top level modules:
+# 	shape_recogniser_testbench
+# End time: 13:58:19 on May 31,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:58:19 on May 31,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 13:58:19 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:58:19 on May 31,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 13:58:19 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:58:19 on May 31,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# 
+# Top level modules:
+# 	edge_search
+# End time: 13:58:19 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:58:19 on May 31,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 13:58:19 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:58:19 on May 31,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# ** Error: (vlog-13069) ./area_calculator.sv(17): near "always_ff": syntax error, unexpected "SystemVerilog keyword 'always_ff'", expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: ./area_calculator.sv(20): (vlog-13205) Syntax error found in the scope following 'y'. Is there a missing '::'?
+# End time: 13:58:19 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./shape_recogniser_testbench.do line 12
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./area_calculator.sv""
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:01 on May 31,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
+# 
+# Top level modules:
+# 	shape_recogniser_testbench
+# End time: 13:59:01 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:01 on May 31,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 13:59:01 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:01 on May 31,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 13:59:01 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:01 on May 31,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# 
+# Top level modules:
+# 	edge_search
+# End time: 13:59:01 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:02 on May 31,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 13:59:02 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:02 on May 31,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# 
+# Top level modules:
+# 	area_calculator
+# End time: 13:59:02 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:59:03 on May 31,2019, Elapsed time: 0:01:27
+# Errors: 5, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
+# Start time: 13:59:04 on May 31,2019
+# Loading sv_std.std
+# Loading work.shape_recogniser_testbench
+# Loading work.shape_recogniser
+# Loading work.pixel_counter
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
+# Loading work.edge_search
+# Loading work.area_calculator
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Error: (vsim-3063) ./shape_recogniser.sv(214): Port 'area' not found in the connected module (8th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./shape_recogniser_testbench.do PAUSED at line 17
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:40 on May 31,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
+# 
+# Top level modules:
+# 	shape_recogniser_testbench
+# End time: 13:59:40 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:40 on May 31,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 13:59:40 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:40 on May 31,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 13:59:40 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:40 on May 31,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# 
+# Top level modules:
+# 	edge_search
+# End time: 13:59:40 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:40 on May 31,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 13:59:40 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:59:40 on May 31,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# 
+# Top level modules:
+# 	area_calculator
+# End time: 13:59:40 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
+# Start time: 13:59:04 on May 31,2019
+# Loading sv_std.std
+# Loading work.shape_recogniser_testbench
+# Loading work.shape_recogniser
+# Loading work.pixel_counter
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
+# Loading work.edge_search
+# Loading work.area_calculator
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftbn0sh7".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftbn0sh7
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./shape_recogniser.sv(529)
+#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 529
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:03:36 on May 31,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
+# 
+# Top level modules:
+# 	shape_recogniser_testbench
+# End time: 14:03:36 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:03:36 on May 31,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 14:03:36 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:03:36 on May 31,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 14:03:36 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:03:37 on May 31,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# 
+# Top level modules:
+# 	edge_search
+# End time: 14:03:37 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:03:37 on May 31,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 14:03:37 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:03:37 on May 31,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# 
+# Top level modules:
+# 	area_calculator
+# End time: 14:03:37 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:03:42 on May 31,2019, Elapsed time: 0:04:38
+# Errors: 1, Warnings: 18
+# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
+# Start time: 14:03:42 on May 31,2019
+# Loading sv_std.std
+# Loading work.shape_recogniser_testbench
+# Loading work.shape_recogniser
+# Loading work.pixel_counter
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
+# Loading work.edge_search
+# Loading work.area_calculator
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlft4x3gfe".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4x3gfe
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./shape_recogniser.sv(529)
+#    Time: 19959050 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 529
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:05:30 on May 31,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
+# 
+# Top level modules:
+# 	shape_recogniser_testbench
+# End time: 14:05:30 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:05:30 on May 31,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 14:05:30 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:05:30 on May 31,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 14:05:30 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:05:30 on May 31,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# 
+# Top level modules:
+# 	edge_search
+# End time: 14:05:30 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:05:30 on May 31,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 14:05:31 on May 31,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:05:31 on May 31,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# 
+# Top level modules:
+# 	area_calculator
+# End time: 14:05:31 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:05:32 on May 31,2019, Elapsed time: 0:01:50
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
+# Start time: 14:05:32 on May 31,2019
+# Loading sv_std.std
+# Loading work.shape_recogniser_testbench
+# Loading work.shape_recogniser
+# Loading work.pixel_counter
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
+# Loading work.edge_search
+# Loading work.area_calculator
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlftgawrvx".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftgawrvx
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./shape_recogniser.sv(529)
+#    Time: 19959050 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 529
+add wave -position 9  sim:/shape_recogniser_testbench/dut/start_area
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/wave.do}
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:09:37 on May 31,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
+# 
+# Top level modules:
+# 	shape_recogniser_testbench
+# End time: 14:09:37 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:09:37 on May 31,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 14:09:37 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:09:37 on May 31,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 14:09:37 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:09:37 on May 31,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# 
+# Top level modules:
+# 	edge_search
+# End time: 14:09:37 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:09:38 on May 31,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 14:09:38 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:09:38 on May 31,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# 
+# Top level modules:
+# 	area_calculator
+# End time: 14:09:38 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:09:39 on May 31,2019, Elapsed time: 0:04:07
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
+# Start time: 14:09:39 on May 31,2019
+# Loading sv_std.std
+# Loading work.shape_recogniser_testbench
+# Loading work.shape_recogniser
+# Loading work.pixel_counter
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
+# Loading work.edge_search
+# Loading work.area_calculator
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlft9m04x8".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft9m04x8
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./shape_recogniser.sv(529)
+#    Time: 19959050 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 529
+do shape_recogniser_testbench.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:11:48 on May 31,2019
+# vlog -reportprogress 300 ./shape_recogniser.sv 
+# -- Compiling module shape_recogniser
+# -- Compiling module shape_recogniser_testbench
+# 
+# Top level modules:
+# 	shape_recogniser_testbench
+# End time: 14:11:48 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:11:48 on May 31,2019
+# vlog -reportprogress 300 ./pixel_counter.sv 
+# -- Compiling module pixel_counter
+# 
+# Top level modules:
+# 	pixel_counter
+# End time: 14:11:48 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:11:48 on May 31,2019
+# vlog -reportprogress 300 ./image_memory.v 
+# -- Compiling module image_memory
+# 
+# Top level modules:
+# 	image_memory
+# End time: 14:11:48 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:11:48 on May 31,2019
+# vlog -reportprogress 300 ./edge_search.sv 
+# -- Compiling module edge_search
+# 
+# Top level modules:
+# 	edge_search
+# End time: 14:11:48 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:11:48 on May 31,2019
+# vlog -reportprogress 300 ./pixel_cache.sv 
+# -- Compiling module pixel_cache
+# -- Compiling module pixel_cache_testbench
+# 
+# Top level modules:
+# 	pixel_cache_testbench
+# End time: 14:11:48 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:11:48 on May 31,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# 
+# Top level modules:
+# 	area_calculator
+# End time: 14:11:48 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:11:51 on May 31,2019, Elapsed time: 0:02:12
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
+# Start time: 14:11:51 on May 31,2019
+# Loading sv_std.std
+# Loading work.shape_recogniser_testbench
+# Loading work.shape_recogniser
+# Loading work.pixel_counter
+# Loading work.image_memory
+# Loading altera_mf_ver.altsyncram
+# Loading work.pixel_cache
+# Loading work.edge_search
+# Loading work.area_calculator
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
+#           Attempting to use alternate WLF file "./wlft9vfyqg".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft9vfyqg
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./shape_recogniser.sv(529)
+#    Time: 19959050 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 529
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/shape_recogniser_testbench_window_2.do}
 do shape_recogniser_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:15 on May 31,2019
+# Start time: 14:13:40 on May 31,2019
 # vlog -reportprogress 300 ./shape_recogniser.sv 
 # -- Compiling module shape_recogniser
 # -- Compiling module shape_recogniser_testbench
 # 
 # Top level modules:
 # 	shape_recogniser_testbench
-# End time: 13:13:15 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:13:40 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:15 on May 31,2019
+# Start time: 14:13:40 on May 31,2019
 # vlog -reportprogress 300 ./pixel_counter.sv 
 # -- Compiling module pixel_counter
 # 
 # Top level modules:
 # 	pixel_counter
-# End time: 13:13:15 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:13:40 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:15 on May 31,2019
+# Start time: 14:13:40 on May 31,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 13:13:15 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:13:40 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:15 on May 31,2019
+# Start time: 14:13:40 on May 31,2019
 # vlog -reportprogress 300 ./edge_search.sv 
 # -- Compiling module edge_search
 # 
 # Top level modules:
 # 	edge_search
-# End time: 13:13:15 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:13:40 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:15 on May 31,2019
+# Start time: 14:13:40 on May 31,2019
 # vlog -reportprogress 300 ./pixel_cache.sv 
 # -- Compiling module pixel_cache
 # -- Compiling module pixel_cache_testbench
 # 
 # Top level modules:
 # 	pixel_cache_testbench
-# End time: 13:13:15 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:13:40 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:13:19 on May 31,2019, Elapsed time: 0:02:20
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:13:40 on May 31,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# 
+# Top level modules:
+# 	area_calculator
+# End time: 14:13:40 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:13:42 on May 31,2019, Elapsed time: 0:01:51
 # Errors: 0, Warnings: 10
 # vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:13:19 on May 31,2019
+# Start time: 14:13:42 on May 31,2019
 # Loading sv_std.std
 # Loading work.shape_recogniser_testbench
 # Loading work.shape_recogniser
@@ -981,88 +934,108 @@ do shape_recogniser_testbench.do
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftqcy9z4".
+#           Attempting to use alternate WLF file "./wlftge4xtb".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftqcy9z4
+#           Using alternate file: ./wlftge4xtb
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(523)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 523
-add wave -position end  sim:/shape_recogniser_testbench/dut/algoritm_running
+# ** Note: $stop    : ./shape_recogniser.sv(530)
+#    Time: 19959050 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 530
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/x0
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/y0
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/x1
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/y1
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/start
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/clk
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/done
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/area
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/x
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/y
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/pixel
+add wave -position end  sim:/shape_recogniser_testbench/dut/shape/ready
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/shape_recogniser_testbench_window_2.do}
 do shape_recogniser_testbench.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:47 on May 31,2019
+# Start time: 14:17:36 on May 31,2019
 # vlog -reportprogress 300 ./shape_recogniser.sv 
 # -- Compiling module shape_recogniser
 # -- Compiling module shape_recogniser_testbench
 # 
 # Top level modules:
 # 	shape_recogniser_testbench
-# End time: 13:13:47 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:17:36 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:47 on May 31,2019
+# Start time: 14:17:36 on May 31,2019
 # vlog -reportprogress 300 ./pixel_counter.sv 
 # -- Compiling module pixel_counter
 # 
 # Top level modules:
 # 	pixel_counter
-# End time: 13:13:47 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:17:36 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:47 on May 31,2019
+# Start time: 14:17:37 on May 31,2019
 # vlog -reportprogress 300 ./image_memory.v 
 # -- Compiling module image_memory
 # 
 # Top level modules:
 # 	image_memory
-# End time: 13:13:47 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:17:37 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:47 on May 31,2019
+# Start time: 14:17:37 on May 31,2019
 # vlog -reportprogress 300 ./edge_search.sv 
 # -- Compiling module edge_search
 # 
 # Top level modules:
 # 	edge_search
-# End time: 13:13:47 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:17:37 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:13:47 on May 31,2019
+# Start time: 14:17:37 on May 31,2019
 # vlog -reportprogress 300 ./pixel_cache.sv 
 # -- Compiling module pixel_cache
 # -- Compiling module pixel_cache_testbench
 # 
 # Top level modules:
 # 	pixel_cache_testbench
-# End time: 13:13:47 on May 31,2019, Elapsed time: 0:00:00
+# End time: 14:17:37 on May 31,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:13:49 on May 31,2019, Elapsed time: 0:00:30
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:17:37 on May 31,2019
+# vlog -reportprogress 300 ./area_calculator.sv 
+# -- Compiling module area_calculator
+# 
+# Top level modules:
+# 	area_calculator
+# End time: 14:17:37 on May 31,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:17:39 on May 31,2019, Elapsed time: 0:03:57
 # Errors: 0, Warnings: 10
 # vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:13:49 on May 31,2019
+# Start time: 14:17:39 on May 31,2019
 # Loading sv_std.std
 # Loading work.shape_recogniser_testbench
 # Loading work.shape_recogniser
@@ -1075,1320 +1048,40 @@ do shape_recogniser_testbench.do
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(210): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftav1wqd".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftav1wqd
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(523)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 523
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:17:57 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:17:57 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:17:57 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:17:57 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:17:58 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:17:58 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:17:58 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:17:58 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:17:58 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:17:58 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:18:12 on May 31,2019, Elapsed time: 0:04:23
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:18:12 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
+# ** Warning: (vsim-3015) ./shape_recogniser.sv(214): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
 #    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlft64i7it".
+#           Attempting to use alternate WLF file "./wlft7f6k6w".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft64i7it
+#           Using alternate file: ./wlft7f6k6w
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(527)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 527
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:19:36 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:19:36 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:19:36 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:19:36 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:19:36 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:19:36 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:19:36 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:19:36 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:19:36 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:19:36 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:19:43 on May 31,2019, Elapsed time: 0:01:31
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:19:43 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftn9de0c".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftn9de0c
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(528)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 528
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:20:53 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:20:53 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:20:53 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:20:53 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:20:53 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:20:53 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:20:53 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:20:53 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:20:53 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:20:53 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:20:55 on May 31,2019, Elapsed time: 0:01:12
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:20:55 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftmg99zg".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftmg99zg
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(528)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 528
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:22:13 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:22:13 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:22:13 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:22:13 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:22:13 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:22:13 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:22:13 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:22:13 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:22:13 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:22:14 on May 31,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# End time: 13:22:15 on May 31,2019, Elapsed time: 0:01:20
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:22:15 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftai7gxq".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftai7gxq
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(527)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 527
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:05 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:23:05 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:05 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:23:06 on May 31,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:06 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:23:06 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:06 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:23:06 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:06 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:23:06 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:23:11 on May 31,2019, Elapsed time: 0:00:56
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:23:11 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftcd9bkg".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftcd9bkg
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(528)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 528
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:56 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:23:57 on May 31,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:57 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:23:57 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:57 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:23:57 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:57 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:23:57 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:57 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:23:57 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:23:59 on May 31,2019, Elapsed time: 0:00:48
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:23:59 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlft34zwyc".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft34zwyc
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(528)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 528
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:26:30 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:26:30 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:26:30 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:26:30 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:26:30 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:26:30 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:26:30 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:26:30 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:26:30 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:26:30 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:26:32 on May 31,2019, Elapsed time: 0:02:33
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:26:32 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlft3qmixx".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft3qmixx
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(528)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 528
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:29:14 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:29:14 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:29:14 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:29:15 on May 31,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:29:15 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:29:15 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:29:15 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:29:15 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:29:15 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:29:15 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:29:21 on May 31,2019, Elapsed time: 0:02:49
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:29:21 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftt0mdhe".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftt0mdhe
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(520)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 520
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:31:42 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:31:42 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:31:42 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:31:42 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:31:42 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:31:42 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:31:42 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:31:42 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:31:42 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:31:42 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:31:44 on May 31,2019, Elapsed time: 0:02:23
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:31:44 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftmj6ewr".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftmj6ewr
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(527)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 527
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:32:32 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:32:32 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:32:32 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:32:32 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:32:32 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:32:32 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:32:32 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:32:32 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:32:33 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:32:33 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:32:39 on May 31,2019, Elapsed time: 0:00:55
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:32:39 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlft5kg13i".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft5kg13i
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(528)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 528
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:33:27 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:33:27 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:33:27 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:33:27 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:33:27 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:33:27 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:33:27 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:33:27 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:33:27 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:33:27 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:33:29 on May 31,2019, Elapsed time: 0:00:50
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:33:29 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftedffh6".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftedffh6
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(523)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 523
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:36:05 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:36:05 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:36:05 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:36:05 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:36:05 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:36:05 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:36:05 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:36:05 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:36:05 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:36:05 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:36:11 on May 31,2019, Elapsed time: 0:02:42
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:36:11 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftsrhrn2".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftsrhrn2
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(524)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 524
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:37:28 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:37:28 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:37:28 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:37:28 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:37:28 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:37:28 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:37:28 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:37:28 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:37:28 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:37:28 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:37:30 on May 31,2019, Elapsed time: 0:01:19
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:37:30 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(208): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(212): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlftva987b".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftva987b
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(524)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 524
-do shape_recogniser_testbench.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:40:11 on May 31,2019
-# vlog -reportprogress 300 ./shape_recogniser.sv 
-# -- Compiling module shape_recogniser
-# -- Compiling module shape_recogniser_testbench
-# 
-# Top level modules:
-# 	shape_recogniser_testbench
-# End time: 13:40:11 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:40:11 on May 31,2019
-# vlog -reportprogress 300 ./pixel_counter.sv 
-# -- Compiling module pixel_counter
-# 
-# Top level modules:
-# 	pixel_counter
-# End time: 13:40:11 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:40:12 on May 31,2019
-# vlog -reportprogress 300 ./image_memory.v 
-# -- Compiling module image_memory
-# 
-# Top level modules:
-# 	image_memory
-# End time: 13:40:12 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:40:12 on May 31,2019
-# vlog -reportprogress 300 ./edge_search.sv 
-# -- Compiling module edge_search
-# 
-# Top level modules:
-# 	edge_search
-# End time: 13:40:12 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:40:12 on May 31,2019
-# vlog -reportprogress 300 ./pixel_cache.sv 
-# -- Compiling module pixel_cache
-# -- Compiling module pixel_cache_testbench
-# 
-# Top level modules:
-# 	pixel_cache_testbench
-# End time: 13:40:12 on May 31,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:40:16 on May 31,2019, Elapsed time: 0:02:46
-# Errors: 0, Warnings: 10
-# vsim -voptargs=""+acc"" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_ver 
-# Start time: 13:40:17 on May 31,2019
-# Loading sv_std.std
-# Loading work.shape_recogniser_testbench
-# Loading work.shape_recogniser
-# Loading work.pixel_counter
-# Loading work.image_memory
-# Loading altera_mf_ver.altsyncram
-# Loading work.pixel_cache
-# Loading work.edge_search
-# Loading work.area_calculator
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(209): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x0'. The port definition is at: ./edge_search.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(209): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y0'. The port definition is at: ./edge_search.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(209): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_x1'. The port definition is at: ./edge_search.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(209): [PCDPC] - Port size (10) does not match connection size (32) for port 'search_y1'. The port definition is at: ./edge_search.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/box File: ./edge_search.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(213): [PCDPC] - Port size (10) does not match connection size (32) for port 'x0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(213): [PCDPC] - Port size (10) does not match connection size (32) for port 'y0'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(213): [PCDPC] - Port size (10) does not match connection size (32) for port 'x1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-3015) ./shape_recogniser.sv(213): [PCDPC] - Port size (10) does not match connection size (32) for port 'y1'. The port definition is at: ./area_calculator.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /shape_recogniser_testbench/dut/shape File: ./area_calculator.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jbiams77  Hostname: DESKTOP-SMOMHGK  ProcessID: 21920
-#           Attempting to use alternate WLF file "./wlfthy64yt".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfthy64yt
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./shape_recogniser.sv(528)
-#    Time: 8158250 ps  Iteration: 1  Instance: /shape_recogniser_testbench
-# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 528
-# End time: 13:49:11 on May 31,2019, Elapsed time: 0:08:54
-# Errors: 0, Warnings: 10
+# ** Note: $stop    : ./shape_recogniser.sv(530)
+#    Time: 19959050 ps  Iteration: 1  Instance: /shape_recogniser_testbench
+# Break in Module shape_recogniser_testbench at ./shape_recogniser.sv line 530
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/shape_recogniser_testbench_window_2.do}
+add wave -position end  sim:/shape_recogniser_testbench/dut/x_search_wire
+add wave -position end  sim:/shape_recogniser_testbench/dut/y_search_wire
+add wave -position end  sim:/shape_recogniser_testbench/dut/x_area_wire
+add wave -position end  sim:/shape_recogniser_testbench/dut/y_area_wire
+add wave -position end  sim:/shape_recogniser_testbench/dut/x_wire
+add wave -position end  sim:/shape_recogniser_testbench/dut/y_wire
+add wave -position end  sim:/shape_recogniser_testbench/dut/pixel
+add wave -position end  sim:/shape_recogniser_testbench/dut/ready
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/User/Desktop/CSE371/Lab6/NarwhalCV/Camera Reduced/shape_recogniser_testbench_window_2.do}

@@ -12,6 +12,8 @@ module area_calculator (
     input logic ready           // true when pixel cache found pixel and outputs value
     );
     
+    //logic [19:0] area;
+    
     always_ff @(posedge clk) begin
         if(start) begin
             x <= x0;
@@ -33,7 +35,10 @@ module area_calculator (
                 
                 // Finish the process when we go past the end of
                 // the bounding square.
-                if(y > y1) done <= 1'b1;
+                if(y > y1) begin
+                    done <= 1'b1;
+                    area <= area;
+                end
             end
         end
     end

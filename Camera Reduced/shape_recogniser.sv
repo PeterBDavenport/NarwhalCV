@@ -86,17 +86,18 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
 
     // Display Pass Through - Presentation to user.
     always_ff @(posedge VGA_CLK) begin
-        // Show the filtered verion in the center of the screen.
-        if((WIDTH/4 < x)&&(x < WIDTH*3/4)&&(HEIGHT/4 < y)&&(y < HEIGHT*3/4)) begin
-            oVGA_R <= pixel_darker_than_cutoff ? 8'h00 : 8'hFF;
-        end else begin
-            oVGA_R <= iVGA_R;
-        end
-        
         if( (x == right_x) || (x == left_x) || (top_y == y) || (bottom_y == y))
-            {oVGA_G, oVGA_B} <= {8'hFF, 8'hFF};
-        else
+            {oVGA_G, oVGA_B, oVGA_R} <= {8'h00, 8'h00, 8'hFF};
+        else begin
             {oVGA_G, oVGA_B} <= {iVGA_G, iVGA_B};
+            
+            // Show the filtered verion in the center of the screen.
+            if((WIDTH/4 < x)&&(x < WIDTH*3/4)&&(HEIGHT/4 < y)&&(y < HEIGHT*3/4)) begin
+                oVGA_R <= pixel_darker_than_cutoff ? 8'h00 : 8'hFF;
+            end else begin
+                oVGA_R <= iVGA_R;
+            end
+        end
 
         {oVGA_HS, oVGA_VS, oVGA_SYNC_N, oVGA_BLANK_N} <= {iVGA_HS, iVGA_VS, iVGA_SYNC_N, iVGA_BLANK_N};
     end
@@ -331,7 +332,7 @@ module shape_recogniser_testbench();
 	// Can reduce width and height to speed up testing
 	parameter WIDTH = 104;
 	parameter HEIGHT = 104;
-	parameter NUM_FRAMES = 2;  // We run until we've seen this many full video frames on the output.
+	parameter NUM_FRAMES = 5;  // We run until we've seen this many full video frames on the output.
 
 	// Places to store the input image.  Set below.
 	logic				[7:0]		inputR	[WIDTH-1:0][HEIGHT-1:0]; 
@@ -406,7 +407,7 @@ module shape_recogniser_testbench();
 
 	// Initialize the inputs to an obvious pattern
 	initial begin
-    /*
+    
         // Draw a square.
 		for (int i=0; i<WIDTH; i++) begin
 			for (int j=0; j<HEIGHT; j++) begin
@@ -415,8 +416,8 @@ module shape_recogniser_testbench();
 			inputB[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
 			end
 		end
-      */  
         
+    /*    
         // Draw a triangle.
         for (int i=0; i<WIDTH; i++) begin
 			for (int j=0; j<HEIGHT; j++) begin
@@ -425,6 +426,7 @@ module shape_recogniser_testbench();
 				inputB[i][j] = (i > 25) && (j > 25) && (i < j) && (j <50) ? 8'h00 : 8'hFF;
 			end
 		end
+        */
 	end
 	
 	// Set up the user inputs.
