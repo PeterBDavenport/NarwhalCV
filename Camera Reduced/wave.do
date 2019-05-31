@@ -1,23 +1,30 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /edge_search_testbench/clk
-add wave -noupdate /edge_search_testbench/reset
-add wave -noupdate -divider pixel_cache
-add wave -noupdate /edge_search_testbench/cache/pixel
-add wave -noupdate /edge_search_testbench/cache/ready
-add wave -noupdate -radix unsigned /edge_search_testbench/cache/x
-add wave -noupdate -radix unsigned /edge_search_testbench/cache/y
-add wave -noupdate -divider edge_search
-add wave -noupdate /edge_search_testbench/dut/start
-add wave -noupdate /edge_search_testbench/dut/done
-add wave -noupdate /edge_search_testbench/dut/found
-add wave -noupdate /edge_search_testbench/dut/ps
-add wave -noupdate /edge_search_testbench/dut/direction
+add wave -noupdate /shape_recogniser_testbench/dut/VGA_CLK
+add wave -noupdate {/shape_recogniser_testbench/dut/KEY[0]}
+add wave -noupdate {/shape_recogniser_testbench/dut/KEY[1]}
+add wave -noupdate /shape_recogniser_testbench/dut/pixel_darker_than_cutoff
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/top_y
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/left_x
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/bottom_y
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/right_x
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/area
+add wave -noupdate /shape_recogniser_testbench/dut/ps
+add wave -noupdate /shape_recogniser_testbench/dut/start_alogrithm
+add wave -noupdate /shape_recogniser_testbench/dut/edge_done
+add wave -noupdate /shape_recogniser_testbench/dut/current_direction
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_search_wire
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_search_wire
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_area_wire
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_area_wire
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_wire
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_wire
+add wave -noupdate /shape_recogniser_testbench/dut/algoritm_running
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {114276 ps} 0} {{Cursor 2} {79787 ps} 0}
-quietly wave cursor active 2
+WaveRestoreCursors {{Cursor 1} {6754215 ps} 0} {{Cursor 2} {2922497 ps} 0} {{Cursor 3} {31934593 ps} 0}
+quietly wave cursor active 1
 configure wave -namecolwidth 150
-configure wave -valuecolwidth 100
+configure wave -valuecolwidth 87
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
 configure wave -snapdistance 10
@@ -30,4 +37,4 @@ configure wave -griddelta 50
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {128363 ps}
+WaveRestoreZoom {0 ps} {8566163 ps}

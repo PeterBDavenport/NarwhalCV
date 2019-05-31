@@ -82,6 +82,7 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
     assign pixel_darker_than_cutoff = ((iVGA_R < SW[7:0]) && (iVGA_G < SW[7:0]) && (iVGA_B < SW[7:0]));
     
     reg [9:0] right_x, left_x, top_y, bottom_y;
+    reg [9:0] right_x_i, left_x_i, top_y_i, bottom_y_i;
 
     // Display Pass Through - Presentation to user.
     always_ff @(posedge VGA_CLK) begin
@@ -156,17 +157,6 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
     end
 
 
-/* 
- * Algoritm trigger when SW[0] goes from 1 -> 0.
- */
-    reg start_algorithm;
-    reg last_SW0_val;
-    always_ff @(posedge VGA_CLK) begin
-        if(last_SW0_val && !KEY[1]) start_algorithm <= 1'b1;
-        else                       start_algorithm <= 1'b0;
-        last_SW0_val <= KEY[1];
-    end
-
 /*
  * The algorithm controller will begin by finding the top edge,  right
  * edge, bottom edge, than left. From that it will load a small register
@@ -198,15 +188,26 @@ logic [9:0] x_area_wire, y_area_wire;
 logic [9:0] x_wire, y_wire;
 wire pixel, ready;
 logic [19:0] area;
-reg reset_search;
 
 assign x_wire = (ps == S_AREA || ps == S_AREA_WAIT) ? x_area_wire : x_search_wire;
 assign y_wire = (ps == S_AREA || ps == S_AREA_WAIT) ? y_area_wire : y_search_wire;
 
+/* 
+ * Algoritm trigger when KEY[1] goes from 1 -> 0.
+ */
+    logic algoritm_running;
+    always_ff @(posedge VGA_CLK) begin
+        if(reset)
+            algoritm_running <= 0;
+        else
+            if(!KEY[1]) algoritm_running <= 1;            // Start the algoritm if the key is pressed.
+    end
+
+
 pixel_cache  #(.WIDTH(WIDTH), .HEIGHT(HEIGHT)) cache (.clk(VGA_CLK), .reset(reset), .pixel(pixel), .ready(ready), .x(x_wire), .y(y_wire), .rdaddress(rdaddress), .rdata(outputData));
 
 edge_search  box(.search_x0(WIDTH/4), .search_y0(HEIGHT/4), .search_x1(WIDTH*3/4), .search_y1(HEIGHT*3/4), 
-                     .start(start_search), .clk(VGA_CLK), .reset(reset_search), .search_direction(current_direction),
+                     .start(start_search), .clk(VGA_CLK), .reset(reset), .search_direction(current_direction),
                      .done(edge_done), .found(edge_found), .x(x_search_wire), .y(y_search_wire), .pixel(pixel), .ready(ready));
 
 area_calculator  shape(.x0(WIDTH/4), .y0(HEIGHT/4), .x1(WIDTH*3/4), .y1(HEIGHT*3/4), .start(start_area),
@@ -216,7 +217,7 @@ area_calculator  shape(.x0(WIDTH/4), .y0(HEIGHT/4), .x1(WIDTH*3/4), .y1(HEIGHT*3
 always_comb begin
     case (ps) 
     S_IDLE          : begin
-                        if(start_algorithm) ns = S_TOP;
+                        if(algoritm_running) ns = S_TOP;
                         else                ns = S_IDLE;
                       end
     S_TOP           :                       ns = S_TOP_WAIT; 
@@ -244,8 +245,8 @@ always_comb begin
                         if(area_done)       ns = S_DONE;
                         else                ns = S_AREA_WAIT;
                       end
-    S_DONE          :                       ns = S_DONE;
-	 default         : 							  ns = S_IDLE;
+    S_DONE          :                       ns = S_IDLE;
+	 default         : 						ns = S_IDLE;
     endcase
 end
 
@@ -256,7 +257,6 @@ always_ff @(posedge VGA_CLK) begin
         ps <= ns;
         case (ps) 
         S_IDLE          : begin
-                          reset_search <= '0;
                           start_search <= '0;
                           start_area <= '0;
                           current_direction <= '0; 
@@ -267,33 +267,37 @@ always_ff @(posedge VGA_CLK) begin
                           end 
         S_TOP_WAIT      : begin 
                             start_search <= 0;
-                            top_y <= y_wire;
+                            top_y_i <= y_search_wire;
                           end
-        S_RIGHT         : begin
+        S_RIGHT         : begin                            
+                            top_y <= top_y_i;
                             start_search <= 1;          //to find right, start at the top right 
                             current_direction <= 2'b10; //scan down than step left
                           end 
         S_RIGHT_WAIT    : begin 
                             start_search <= 0;
-                            right_x <= x_wire;
+                            right_x_i <= x_wire;
                           end
         S_BOTTOM        : begin
+                            right_x <= right_x_i;
                             start_search <= 1;          // Start at the bottom left 
                             current_direction <= 2'b00; // scan to the right than step up
                           end 
         S_BOTTOM_WAIT   : begin 
                             start_search <= 0;
-                            bottom_y <= y_wire;
+                            bottom_y_i <= y_wire;
                           end
         S_LEFT          : begin
+                            bottom_y <= bottom_y_i;
                             start_search <= 1;          // Start at the top right
                             current_direction <= 2'b11; // scan down than step right
                           end 
         S_LEFT_WAIT     : begin 
                             start_search <= 0;
-                            left_x <= x_wire;
+                            left_x_i <= x_wire;
                           end
         S_AREA          : begin
+                            left_x <= left_x_i;
                             start_area <= 1;
                           end
         S_AREA_WAIT     : begin

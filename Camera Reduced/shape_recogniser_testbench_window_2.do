@@ -19,9 +19,10 @@ add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_area_wire
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_area_wire
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_wire
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_wire
-add wave -noupdate -expand /shape_recogniser_testbench/inputR
+add wave -noupdate -divider div
+add wave -noupdate /shape_recogniser_testbench/dut/algoritm_running
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {6754215 ps} 0} {{Cursor 2} {2922497 ps} 0} {{Cursor 3} {31934593 ps} 0}
+WaveRestoreCursors {{Cursor 1} {5896949 ps} 0} {{Cursor 2} {1552171 ps} 0} {{Cursor 3} {31934593 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 87
