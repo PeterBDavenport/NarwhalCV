@@ -59,6 +59,23 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
    input logic [8:0] SW   // SW[9] reserved for auto-focus mode.
 );
 
+     // Set display outputs.
+     assign LEDR = '0;
+
+	 /* The following is responisble for displaying the shape detected to the
+	  * seven segment display. Shape is only when detected.
+	  */
+	  logic circle, square, triangle;
+	  assign circle = SW[0];
+	  assign square = SW[1];
+	  assign triangle = SW[2];
+	  
+	  display shape_detected(circle, 
+									 square, 
+									 triangle, 
+									 HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
+	  
+
     /*
      * The basic idea here is that we are being given a constant stream of video, or a frozen
      * frame of video looping over and over again, and we want to load this into an array to
@@ -248,7 +265,7 @@ always_comb begin
                         else                ns = S_AREA_WAIT_2;
                       end
     S_DONE          :                       ns = S_IDLE;
-	 default         : 						ns = S_IDLE;
+	 default         : 						     ns = S_IDLE;
     endcase
 end
 
@@ -308,14 +325,6 @@ always_ff @(posedge VGA_CLK) begin
     end
 end
 
-   // Set display outputs.
-   assign HEX0 = '1;
-   assign HEX1 = '1;
-   assign HEX2 = '1;
-   assign HEX3 = '1;
-   assign HEX4 = '1;
-   assign HEX5 = '1;
-   assign LEDR = '0;
 endmodule
 
 /*
@@ -328,7 +337,7 @@ endmodule
  */
 
 `timescale 1 ps / 1 ps
-module shape_recogniser_testbench();
+module shape_recogniser_testbench(); 
 	// Can reduce width and height to speed up testing
 	parameter WIDTH = 104;
 	parameter HEIGHT = 104;
