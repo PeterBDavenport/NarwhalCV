@@ -87,7 +87,7 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
     always_ff @(posedge VGA_CLK) begin
         // Show the filtered verion in the center of the screen.
         if((WIDTH/4 < x)&&(x < WIDTH*3/4)&&(HEIGHT/4 < y)&&(y < HEIGHT*3/4)) begin
-            oVGA_B <= pixel_darker_than_cutoff ? 8'h00 : 8'hFF;
+            oVGA_R <= pixel_darker_than_cutoff ? 8'h00 : 8'hFF;
         end else begin
             oVGA_R <= iVGA_R;
         end
@@ -117,10 +117,12 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
     reg  [15:0]  wraddress;
     reg          write_en;
     image_memory image(.clock(VGA_CLK),
+                        // Inputs
                        .data(write_data),
-                       .rdaddress(rdaddress),
                        .wraddress(wraddress),
                        .wren(write_en),
+                        // Outputs
+                       .rdaddress(rdaddress),
                        .q(outputData));
 
     /*  Since our memory has a 8 bit word size we have 80 8-bit words per line
@@ -131,16 +133,16 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
      *  To find the pixel itself we need to mask and shift the pixel out. The shift
      *  amount is given as shft_amt = x%8.
      */
-    reg [8:0] pixel_buffer;
+    reg [8:0] px_write_buffer;
     always_ff @(posedge VGA_CLK) begin
         if(reset) begin
-            pixel_buffer <= 0;
+            px_write_buffer <= 0;
             write_en <= 0;
         end
         
         // Use the write data as a buffer to accumulate a full 8 bits of
         // data before sending it to the memory.
-        pixel_buffer <= (pixel_darker_than_cutoff && iVGA_BLANK_N) | (pixel_buffer << 1);
+        px_write_buffer <= (pixel_darker_than_cutoff && iVGA_BLANK_N) | (px_write_buffer << 1);
         
         // Set the write address based on the coordinates.
         wraddress <= (y*(WIDTH/8)) + (x>>3);
@@ -148,7 +150,7 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
         // Only record once every eight horizontal pixels.
         if(((x+1)%8) == 0 && (x > 0) && iVGA_BLANK_N) begin
             write_en <= 1'b1;
-            write_data <= pixel_buffer[7:0];
+            write_data <= px_write_buffer[7:0];
         end else
             write_en <= 1'b0;
     end
@@ -160,9 +162,9 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
     reg start_algorithm;
     reg last_SW0_val;
     always_ff @(posedge VGA_CLK) begin
-        if(last_SW0_val && !KEY[0]) start_algorithm <= 1'b1;
+        if(last_SW0_val && !KEY[1]) start_algorithm <= 1'b1;
         else                       start_algorithm <= 1'b0;
-        last_SW0_val <= KEY[0];
+        last_SW0_val <= KEY[1];
     end
 
 /*
@@ -201,7 +203,7 @@ reg reset_search;
 assign x_wire = (ps == S_AREA || ps == S_AREA_WAIT) ? x_area_wire : x_search_wire;
 assign y_wire = (ps == S_AREA || ps == S_AREA_WAIT) ? y_area_wire : y_search_wire;
 
-pixel_cache  cache(.clk(VGA_CLK), .reset(reset), .pixel(pixel), .ready(ready), .x(x_wire), .y(y_wire), .rdaddress(rdaddress), .rdata(outputData));
+pixel_cache  #(.WIDTH(WIDTH), .HEIGHT(HEIGHT)) cache (.clk(VGA_CLK), .reset(reset), .pixel(pixel), .ready(ready), .x(x_wire), .y(y_wire), .rdaddress(rdaddress), .rdata(outputData));
 
 edge_search  box(.search_x0(WIDTH/4), .search_y0(HEIGHT/4), .search_x1(WIDTH*3/4), .search_y1(HEIGHT*3/4), 
                      .start(start_search), .clk(VGA_CLK), .reset(reset_search), .search_direction(current_direction),
@@ -253,7 +255,12 @@ always_ff @(posedge VGA_CLK) begin
     else begin
         ps <= ns;
         case (ps) 
-        S_IDLE          : reset_search <= 0;
+        S_IDLE          : begin
+                          reset_search <= '0;
+                          start_search <= '0;
+                          start_area <= '0;
+                          current_direction <= '0; 
+                          end
         S_TOP           : begin
                             start_search <= 1;          //to find top, start at the top left 
                             current_direction <= 2'b01; //scan right than step down
@@ -296,9 +303,6 @@ always_ff @(posedge VGA_CLK) begin
     end
 end
 
-     
-     
-   
    // Set display outputs.
    assign HEX0 = '1;
    assign HEX1 = '1;
@@ -398,29 +402,25 @@ module shape_recogniser_testbench();
 
 	// Initialize the inputs to an obvious pattern
 	initial begin
+    /*
         // Draw a square.
 		for (int i=0; i<WIDTH; i++) begin
 			for (int j=0; j<HEIGHT; j++) begin
+            inputG[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
             inputR[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
-				inputG[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
-				inputB[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
-//            inputR[i][j] = 8'h00;//i%2;
-//				inputG[i][j] = 8'h00;//i%2;
-//				inputB[i][j] = 8'h00;//i%2;
-                
+			inputB[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
 			end
 		end
+      */  
         
-        /*
         // Draw a triangle.
         for (int i=0; i<WIDTH; i++) begin
 			for (int j=0; j<HEIGHT; j++) begin
-                inputR[i][j] = (i > 25) && (j > 25) && (i < j) ? 0xFF : 0x00;
-				inputG[i][j] = (i > 25) && (j > 25) && (i < j) ? 0xFF : 0x00;
-				inputB[i][j] = (i > 25) && (j > 25) && (i < j) ? 0xFF : 0x00;
+                inputR[i][j] = (i > 25) && (j > 25) && (i < j) && (j <50) ? 8'h00 : 8'hFF;
+				inputG[i][j] = (i > 25) && (j > 25) && (i < j) && (j <50) ? 8'h00 : 8'hFF;
+				inputB[i][j] = (i > 25) && (j > 25) && (i < j) && (j <50) ? 8'h00 : 8'hFF;
 			end
 		end
-        */
 	end
 	
 	// Set up the user inputs.
@@ -487,19 +487,19 @@ module shape_recogniser_testbench();
    logic		[12:0]		out_y; // Position vertically
 
 	always_ff @(posedge VGA_CLK) begin
-		assert(!reset_n || oVGA_SYNC_N == 0);
+		//assert(!reset_n || oVGA_SYNC_N == 0);
 		if (!reset_n) begin
 			out_x <= 0;
 			out_y <= 0;
 			// Ignore everything if in reset period.
 		end else if (!oVGA_BLANK_N) begin // When we should be off
-			assert(oVGA_R == 0 && oVGA_G == 0 && oVGA_B == 0);
+			//assert(oVGA_R == 0 && oVGA_G == 0 && oVGA_B == 0);
 			if (!oVGA_VS) begin // Reset on vsync.
 				out_x <= 0;
 				out_y <= 0;
 			end
-			assert(out_x <= WIDTH);
-			assert(out_y <= HEIGHT);
+			//assert(out_x <= WIDTH);
+			//assert(out_y <= HEIGHT);
 		end else begin
 			outputR[out_x][out_y] <= oVGA_R;
 			outputG[out_x][out_y] <= oVGA_G;
@@ -519,10 +519,10 @@ module shape_recogniser_testbench();
 	always_ff @(posedge VGA_CLK) begin
 		if (!reset_n) begin
 			frames_seen <= 0;
-            KEY[0] <= 1'b1;
+            KEY[1] <= 1'b1;
 		end else if (prev_iVGA_VS && !iVGA_VS) begin
 			if (frames_seen == NUM_FRAMES) $stop();
-            if (frames_seen == 1) KEY[0] <= 1'b0;
+            if (frames_seen == 1) KEY[1] <= 1'b0;
 			frames_seen <= frames_seen + 1;
 		end
 		prev_iVGA_VS <= iVGA_VS;

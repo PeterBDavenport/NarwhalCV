@@ -8,6 +8,7 @@ vlog "./shape_recogniser.sv"
 vlog "./pixel_counter.sv"
 vlog "./image_memory.v"
 vlog "./edge_search.sv"
+vlog "./pixel_cache.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
@@ -17,7 +18,7 @@ vsim -voptargs="+acc" -t 1ps -lib work shape_recogniser_testbench -Lf altera_mf_
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do shape_recogniser_testbench_window_states.do
+do shape_recogniser_testbench_window_2.do
 #do shape_recogniser_testbench_window.do
 
 # Set the window types

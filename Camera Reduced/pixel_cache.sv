@@ -1,4 +1,5 @@
-module pixel_cache (
+module pixel_cache #(parameter WIDTH = 640, parameter HEIGHT = 480)
+(
     // User interface.
     input logic clk,     // Module clock.
     input logic reset,   // Module reset.
@@ -21,7 +22,7 @@ module pixel_cache (
     assign ready = (ready_address == requested_address);
     assign px_data = (rdata >> (x%8));
     assign pixel = px_data[0];
-    assign requested_address = (y*80) + (x>>3);
+    assign requested_address = (y*WIDTH/8) + (x>>3);
     assign rdaddress = requested_address[15:0];
     
     enum {S_idle, S_px_load} ps, ns;

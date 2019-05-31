@@ -17,7 +17,6 @@ add wave -noupdate /shape_recogniser_testbench/dut/image/wren
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/image/rdaddress
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/image/q
 add wave -noupdate -divider filterd
-add wave -noupdate /shape_recogniser_testbench/dut/pixel_buffer
 add wave -noupdate /shape_recogniser_testbench/dut/pixel_darker_than_cutoff
 add wave -noupdate -divider outputs
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/oVGA_B
@@ -69,7 +68,7 @@ add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/cache/y
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/cache/rdaddress
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/cache/rdata
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {4744250 ps} 0} {{Cursor 2} {1010207 ps} 0} {{Cursor 3} {31934593 ps} 0}
+WaveRestoreCursors {{Cursor 1} {4744250 ps} 0} {{Cursor 2} {779332 ps} 0} {{Cursor 3} {31934593 ps} 0}
 quietly wave cursor active 2
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 87
