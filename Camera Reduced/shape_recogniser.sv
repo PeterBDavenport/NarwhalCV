@@ -171,7 +171,7 @@ enum { S_IDLE,
        S_RIGHT, S_RIGHT_WAIT, 
        S_BOTTOM, S_BOTTOM_WAIT,
        S_LEFT, S_LEFT_WAIT,
-       S_AREA, S_AREA_WAIT,
+       S_AREA, S_AREA_WAIT, S_AREA_WAIT_2,
        S_DONE } ps, ns;
 
 logic start_alogrithm;
@@ -188,10 +188,10 @@ logic [9:0] x_search_wire, y_search_wire;
 logic [9:0] x_area_wire, y_area_wire;
 logic [9:0] x_wire, y_wire;
 wire pixel, ready;
-logic [19:0] area;
+logic [19:0] area, saved_area;
 
-assign x_wire = (ps == S_AREA || ps == S_AREA_WAIT) ? x_area_wire : x_search_wire;
-assign y_wire = (ps == S_AREA || ps == S_AREA_WAIT) ? y_area_wire : y_search_wire;
+assign x_wire = (ps == S_AREA || ps == S_AREA_WAIT || ps == S_AREA_WAIT_2) ? x_area_wire : x_search_wire;
+assign y_wire = (ps == S_AREA || ps == S_AREA_WAIT || ps == S_AREA_WAIT_2) ? y_area_wire : y_search_wire;
 
 /* 
  * Algoritm trigger when KEY[1] goes from 1 -> 0.
@@ -242,9 +242,10 @@ always_comb begin
                         else                ns = S_LEFT_WAIT;
                       end
     S_AREA          :                       ns = S_AREA_WAIT;
-    S_AREA_WAIT     : begin
+    S_AREA_WAIT     :                       ns = S_AREA_WAIT_2;
+    S_AREA_WAIT_2   : begin
                         if(area_done)       ns = S_DONE;
-                        else                ns = S_AREA_WAIT;
+                        else                ns = S_AREA_WAIT_2;
                       end
     S_DONE          :                       ns = S_IDLE;
 	 default         : 						ns = S_IDLE;
@@ -301,9 +302,8 @@ always_ff @(posedge VGA_CLK) begin
                             left_x <= left_x_i;
                             start_area <= 1;
                           end
-        S_AREA_WAIT     : begin
-                            start_area <= 0;
-                          end
+        S_AREA_WAIT     : start_area <= 0;
+        S_DONE          : saved_area <= area;
         endcase
     end
 end

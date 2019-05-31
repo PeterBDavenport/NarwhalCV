@@ -20,6 +20,7 @@ add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/left_x
 add wave -noupdate -divider div
 add wave -noupdate /shape_recogniser_testbench/dut/algoritm_running
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/area
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/saved_area
 add wave -noupdate /shape_recogniser_testbench/dut/start_area
 add wave -noupdate /shape_recogniser_testbench/dut/ps
 add wave -noupdate -divider Area
@@ -36,17 +37,17 @@ add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/shape/y
 add wave -noupdate /shape_recogniser_testbench/dut/shape/pixel
 add wave -noupdate /shape_recogniser_testbench/dut/shape/ready
 add wave -noupdate -divider wires
-add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_search_wire
-add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_search_wire
-add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_area_wire
-add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_area_wire
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_wire
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_area_wire
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/x_search_wire
 add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_wire
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_area_wire
+add wave -noupdate -radix unsigned /shape_recogniser_testbench/dut/y_search_wire
 add wave -noupdate /shape_recogniser_testbench/dut/pixel
 add wave -noupdate /shape_recogniser_testbench/dut/ready
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {19898608 ps} 0} {{Cursor 2} {7041150 ps} 0} {{Cursor 3} {31934593 ps} 0}
-quietly wave cursor active 2
+WaveRestoreCursors {{Cursor 1} {19958428 ps} 0} {{Cursor 2} {5654950 ps} 0} {{Cursor 3} {31934593 ps} 0} {{Cursor 4} {3018825 ps} 0} {{Cursor 5} {7419955 ps} 0}
+quietly wave cursor active 4
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 87
 configure wave -justifyvalue left
@@ -61,4 +62,4 @@ configure wave -griddelta 50
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {4406742 ps} {8721613 ps}
+WaveRestoreZoom {0 ps} {20957003 ps}
