@@ -549,6 +549,8 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_global_assignment -name SYSTEMVERILOG_FILE edge_search.sv
+set_global_assignment -name SYSTEMVERILOG_FILE area_calculator.sv
 set_global_assignment -name SYSTEMVERILOG_FILE shape_recogniser.sv
 set_global_assignment -name SYSTEMVERILOG_FILE single_frame_trigger.sv
 set_global_assignment -name SYSTEMVERILOG_FILE pixel_counter.sv

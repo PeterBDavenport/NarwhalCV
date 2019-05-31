@@ -87,7 +87,7 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
     always_ff @(posedge VGA_CLK) begin
         // Show the filtered verion in the center of the screen.
         if((WIDTH/4 < x)&&(x < WIDTH*3/4)&&(HEIGHT/4 < y)&&(y < HEIGHT*3/4)) begin
-            oVGA_R <= pixel_darker_than_cutoff ? 8'h00 : 8'hFF;
+            oVGA_B <= pixel_darker_than_cutoff ? 8'h00 : 8'hFF;
         end else begin
             oVGA_R <= iVGA_R;
         end
@@ -174,7 +174,7 @@ module shape_recogniser #(parameter WIDTH = 640, parameter HEIGHT = 480)
  */
 
 enum { S_IDLE,
-       S_TOP, S_TOP_WAIT, S_TOP_DONE,
+       S_TOP, S_TOP_WAIT,
        S_RIGHT, S_RIGHT_WAIT, 
        S_BOTTOM, S_BOTTOM_WAIT,
        S_LEFT, S_LEFT_WAIT,
@@ -219,12 +219,8 @@ always_comb begin
                       end
     S_TOP           :                       ns = S_TOP_WAIT; 
     S_TOP_WAIT      : begin 
-                        if(edge_done)       ns = S_TOP_DONE;
+                        if(edge_done)       ns = S_RIGHT;
                         else                ns = S_TOP_WAIT;
-                      end
-    S_TOP_DONE      : begin
-                        if(!edge_done)      ns = S_RIGHT;
-                        else                ns = S_TOP_DONE;
                       end
     S_RIGHT         :                       ns = S_RIGHT_WAIT;
     S_RIGHT_WAIT    : begin
@@ -233,8 +229,8 @@ always_comb begin
                       end
     S_BOTTOM        :                       ns = S_BOTTOM_WAIT;
     S_BOTTOM_WAIT   : begin
-                        if(edge_done)       ns = S_RIGHT;
-                        else                ns = S_TOP_WAIT;
+                        if(edge_done)       ns = S_LEFT;
+                        else                ns = S_BOTTOM_WAIT;
                       end
     S_LEFT          :                       ns = S_LEFT_WAIT;
     S_LEFT_WAIT     : begin
@@ -266,11 +262,8 @@ always_ff @(posedge VGA_CLK) begin
                             start_search <= 0;
                             top_y <= y_wire;
                           end
-        S_TOP_DONE      : begin
-                            start_search <= 1;
-                          end
         S_RIGHT         : begin
-                            start_search <= 0;          //to find right, start at the top right 
+                            start_search <= 1;          //to find right, start at the top right 
                             current_direction <= 2'b10; //scan down than step left
                           end 
         S_RIGHT_WAIT    : begin 
@@ -408,12 +401,12 @@ module shape_recogniser_testbench();
         // Draw a square.
 		for (int i=0; i<WIDTH; i++) begin
 			for (int j=0; j<HEIGHT; j++) begin
-                //inputR[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
-				//inputG[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
-				//inputB[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
-                inputR[i][j] = 8'h00;//i%2;
-				inputG[i][j] = 8'h00;//i%2;
-				inputB[i][j] = 8'h00;//i%2;
+            inputR[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
+				inputG[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
+				inputB[i][j] = (i > 30) && (i < 60) && (j > 30) && (j < 60) ? 8'h00 : 8'hFF;
+//            inputR[i][j] = 8'h00;//i%2;
+//				inputG[i][j] = 8'h00;//i%2;
+//				inputB[i][j] = 8'h00;//i%2;
                 
 			end
 		end
